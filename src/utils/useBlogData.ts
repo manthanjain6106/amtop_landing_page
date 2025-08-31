@@ -41,7 +41,7 @@ interface BlogData {
   searchPosts: (searchTerm: string) => void;
   filterByCategory: (category: string) => void;
   filterByTag: (tag: string) => void;
-  fetchPosts: () => void;
+  fetchPosts: (page?: number, limit?: number) => void;
 }
 
 export const useBlogData = (): BlogData => {

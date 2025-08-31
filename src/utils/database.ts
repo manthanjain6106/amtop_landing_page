@@ -103,7 +103,7 @@ export async function getEmailSubscriptions(section?: string): Promise<EmailSubs
       .sort({ timestamp: -1 })
       .toArray();
     
-    return subscriptions;
+    return subscriptions as unknown as EmailSubscription[];
   } catch (error) {
     console.error('Failed to get email subscriptions:', error);
     return [];

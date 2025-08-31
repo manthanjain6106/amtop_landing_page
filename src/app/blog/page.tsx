@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Search, Calendar, User, Clock, ArrowRight, BookOpen, TrendingUp, Zap, Shield, Users, Globe, Loader2 } from 'lucide-react';
+import { Search, Calendar, User, Clock, ArrowRight, BookOpen, Loader2 } from 'lucide-react';
 import { useBlogData } from '@/utils/useBlogData';
 import SEO from '@/components/SEO';
 import Breadcrumb from '@/components/Breadcrumb';
@@ -27,7 +27,6 @@ const BlogPage = () => {
     error,
     totalPosts,
     searchPosts,
-    filterByCategory,
     filterByTag,
     fetchPosts
   } = useBlogData();
@@ -40,14 +39,14 @@ const BlogPage = () => {
     fetchPostsForPage(page);
   };
 
-  const fetchPostsForPage = async (page: number) => {
+  const fetchPostsForPage = useCallback(async (page: number) => {
     await fetchPosts(page, postsPerPage);
-  };
+  }, [fetchPosts, postsPerPage]);
 
   // Effect to fetch posts when page changes
   useEffect(() => {
     fetchPostsForPage(currentPage);
-  }, [currentPage]);
+  }, [fetchPostsForPage, currentPage]);
 
   // Use the first post as featured article
   const featuredArticle = posts.length > 0 ? {
