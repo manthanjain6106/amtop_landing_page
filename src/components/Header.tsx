@@ -90,12 +90,12 @@ const Header = () => {
               href="/"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
-              className="flex items-center h-16 sm:h-18 lg:h-20"
+              className="flex items-center h-12 sm:h-16 md:h-18 lg:h-20"
             >
               <img
                 src="/images/logo.png"
                 alt="amTop Logo"
-                className="h-16 sm:h-18 lg:h-20 w-auto object-contain brightness-0 filter"
+                className="h-12 sm:h-16 md:h-18 lg:h-20 w-auto object-contain brightness-0 filter"
               />
             </motion.a>
 
@@ -136,7 +136,7 @@ const Header = () => {
               className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 mobile-menu"
               aria-label="Toggle mobile menu"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={24} className="text-black" /> : <Menu size={24} className="text-black" />}
             </motion.button>
           </div>
 

@@ -13,10 +13,9 @@ export default function Home() {
       <Header />
       <Hero />
       <ScrollContainer />
-      <TrustedBy />
       <Pricing />
       <FAQ/>
-      <div className="mt-16">
+      <div className="mt-8 sm:mt-12 md:mt-16">
         <Footer />
       </div>
     </div>

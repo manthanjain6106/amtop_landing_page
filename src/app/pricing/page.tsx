@@ -92,18 +92,18 @@ export default function PricingPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-8 px-4">
+      <section className="section-padding-top pb-8 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               Simple, Transparent
               <span className="text-blue-600"> Pricing</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
               All plans are now completely FREE. Start building with enterprise-grade features at zero cost.
             </p>
           </motion.div>
@@ -111,7 +111,7 @@ export default function PricingPage() {
       </section>
 
       {/* Pricing Plans */}
-      <section className="pt-8 pb-20 px-4">
+      <section className="pt-8 section-padding-bottom px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div
             ref={ref}
@@ -120,10 +120,10 @@ export default function PricingPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Choose Your Plan
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
               All plans include our core features. Upgrade when you need more.
             </p>
           </motion.div>
@@ -215,17 +215,17 @@ export default function PricingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-blue-600">
+      <section className="section-padding px-4 bg-blue-600">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl font-bold text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Get Started?
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-lg sm:text-xl text-blue-100 mb-8">
               Join thousands of teams already using amTop. All plans are completely FREE.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

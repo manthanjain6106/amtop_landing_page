@@ -22,7 +22,7 @@ import {
   CheckCircle
 } from 'lucide-react';
 import { useState } from 'react';
-import { useEmailSubscription } from '@/utils/useEmailSubscription';
+import { useContactForm, ContactFormData } from '@/utils/useContactForm';
 
 const ContactPage = () => {
   const [ref, inView] = useInView({
@@ -30,40 +30,33 @@ const ContactPage = () => {
     threshold: 0.1,
   });
   
-  const [formData, setFormData] = useState({
-    name: '',
+  const [formData, setFormData] = useState<ContactFormData>({
+    firstName: '',
+    lastName: '',
     email: '',
     company: '',
     subject: '',
     message: ''
   });
   
-  const { subscribe, isLoading, error, success, reset } = useEmailSubscription();
+  const { submitContactForm, isLoading, error, success, reset } = useContactForm();
 
   const contactMethods = [
     {
       icon: Mail,
       title: 'Email Us',
       description: 'Get in touch with our team',
-      contact: 'hello@amtop.ai',
+      contact: 'amarnath@amtop.in',
       action: 'Send Email',
-      href: 'mailto:hello@amtop.ai'
+      href: 'mailto:amarnath@amtop.in'
     },
     {
       icon: Phone,
       title: 'Call Us',
       description: 'Speak with a representative',
-      contact: '+1 (555) 123-4567',
+      contact: '+91 9265249821',
       action: 'Call Now',
-      href: 'tel:+15551234567'
-    },
-    {
-      icon: MapPin,
-      title: 'Live Chat',
-      description: 'Chat with our support team',
-      contact: 'Available 24/7',
-      action: 'Start Chat',
-      href: '#'
+      href: 'tel:+919265249821'
     }
   ];
 
@@ -74,7 +67,7 @@ const ContactPage = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="section-padding-top section-padding-bottom bg-gradient-to-br from-gray-50 to-white">
         <div className="container-max">
           <motion.div
             ref={ref}
@@ -105,7 +98,7 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Methods Section */}
-      <section className="py-20 bg-white">
+      <section className="section-padding bg-white">
         <div className="container-max">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -120,7 +113,7 @@ const ContactPage = () => {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
             {contactMethods.map((method, index) => (
               <motion.div
                 key={method.title}
@@ -128,7 +121,7 @@ const ContactPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-lg transition-shadow duration-300 border border-gray-100"
+                className="bg-white rounded-2xl p-6 sm:p-8 text-center shadow-sm hover:shadow-lg transition-shadow duration-300 border border-gray-100"
               >
                 <div className="w-16 h-16 bg-gradient-to-br from-black to-gray-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <method.icon className="text-white" size={32} />
@@ -151,9 +144,9 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="section-padding bg-gray-50">
         <div className="container-max">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -194,22 +187,21 @@ const ContactPage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
+              className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100"
             >
               <form onSubmit={async (e) => {
                 e.preventDefault();
-                if (formData.email.trim()) {
-                  await subscribe(formData.email.trim(), 'contact_form', 'contact_page');
-                  if (success) {
-                    setFormData({
-                      name: '',
-                      email: '',
-                      company: '',
-                      subject: '',
-                      message: ''
-                    });
-                    setTimeout(() => reset(), 3000);
-                  }
+                const success = await submitContactForm(formData);
+                if (success) {
+                  setFormData({
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    company: '',
+                    subject: '',
+                    message: ''
+                  });
+                  setTimeout(() => reset(), 3000);
                 }
               }} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -221,8 +213,8 @@ const ContactPage = () => {
                       type="text"
                       id="firstName"
                       name="firstName"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      value={formData.firstName}
+                      onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
                       placeholder="John"
@@ -236,8 +228,8 @@ const ContactPage = () => {
                       type="text"
                       id="lastName"
                       name="lastName"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      value={formData.lastName}
+                      onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
                       placeholder="Doe"
@@ -286,14 +278,14 @@ const ContactPage = () => {
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent text-gray-900 bg-white"
                   >
-                    <option value="">Select a subject</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="sales">Sales Question</option>
-                    <option value="support">Technical Support</option>
-                    <option value="partnership">Partnership Opportunity</option>
-                    <option value="other">Other</option>
+                    <option value="" className="text-gray-900">Select a subject</option>
+                    <option value="general" className="text-gray-900">General Inquiry</option>
+                    <option value="sales" className="text-gray-900">Sales Question</option>
+                    <option value="support" className="text-gray-900">Technical Support</option>
+                    <option value="partnership" className="text-gray-900">Partnership Opportunity</option>
+                    <option value="other" className="text-gray-900">Other</option>
                   </select>
                 </div>
                 
@@ -347,7 +339,7 @@ const ContactPage = () => {
 
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="section-padding bg-gray-50">
         <div className="container-max">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -414,7 +406,7 @@ const ContactPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-black">
+      <section className="section-padding bg-black">
         <div className="container-max">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

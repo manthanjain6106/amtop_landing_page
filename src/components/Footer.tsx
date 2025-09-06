@@ -1,7 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { 
   Twitter, 
   Linkedin, 
@@ -15,11 +13,6 @@ import { useState } from 'react';
 import { useEmailSubscription } from '@/utils/useEmailSubscription';
 
 const Footer = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-  
   const [email, setEmail] = useState('');
   const { subscribe, isLoading, error, success, reset } = useEmailSubscription();
 
@@ -73,13 +66,7 @@ const Footer = () => {
         <div className="py-12 sm:py-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 sm:gap-8">
             {/* Brand Section */}
-            <motion.div
-              ref={ref}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
-              className="sm:col-span-2 lg:col-span-2"
-            >
+            <div className="sm:col-span-2 lg:col-span-2">
               <div className="mb-4 sm:mb-6">
                 <span className="text-xl sm:text-2xl font-bold text-gray-900">amTop</span>
               </div>
@@ -112,10 +99,8 @@ const Footer = () => {
                       className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-black text-sm sm:text-base"
                       disabled={isLoading}
                     />
-                    <motion.button
+                    <button
                       type="submit"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
                       disabled={isLoading || !email.trim()}
                       className="bg-black hover:bg-gray-800 disabled:bg-gray-400 px-3 sm:px-4 py-2 sm:py-3 rounded-r-lg transition-colors duration-200 text-white disabled:cursor-not-allowed"
                     >
@@ -124,7 +109,7 @@ const Footer = () => {
                       ) : (
                         <ArrowRight size={14} className="sm:w-4 sm:h-4" />
                       )}
-                    </motion.button>
+                    </button>
                   </div>
                   {error && (
                     <p className="text-xs text-red-600">{error}</p>
@@ -143,19 +128,15 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone size={14} className="sm:w-4 sm:h-4" />
-                  <span>+1 (555) 123-4567</span>
+                  <span>+91 9265249821</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Footer Links */}
-            {footerSections.map((section, index) => (
-              <motion.div
+            {footerSections.map((section) => (
+              <div
                 key={section.title}
-                ref={ref}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 * (index + 1) }}
                 className="flex flex-col items-start"
               >
                 <h3 className="text-xs sm:text-sm font-semibold text-gray-900 mb-3 sm:mb-4 uppercase tracking-wider">
@@ -173,19 +154,13 @@ const Footer = () => {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
 
         {/* Bottom Section */}
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="border-t border-gray-200 py-6 sm:py-8"
-        >
+        <div className="border-t border-gray-200 py-6 sm:py-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             {/* Copyright */}
             <div className="text-gray-600 text-xs sm:text-sm text-center sm:text-left">
@@ -195,20 +170,18 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex items-center space-x-3 sm:space-x-4">
               {socialLinks.map((social) => (
-                <motion.a
+                <a
                   key={social.name}
                   href={social.href}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
                   className={`text-gray-600 ${social.color} transition-colors duration-200`}
                   aria-label={social.name}
                 >
                   <social.icon size={18} className="sm:w-5 sm:h-5" />
-                </motion.a>
+                </a>
               ))}
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </footer>
   );

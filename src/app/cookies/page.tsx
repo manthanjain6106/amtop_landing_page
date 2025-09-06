@@ -2,8 +2,6 @@
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { 
   Users, 
   Target, 
@@ -21,11 +19,6 @@ import {
 } from 'lucide-react';
 
 const CookiePolicyPage = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   const lastUpdated = 'December 10, 2024';
 
   const cookieTypes = [
@@ -84,13 +77,7 @@ const CookiePolicyPage = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-orange-50 to-yellow-50">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
-          >
+          <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               Cookie Policy
             </h1>
@@ -103,67 +90,46 @@ const CookiePolicyPage = () => {
               <Clock size={16} />
               <span>Last Updated: {lastUpdated}</span>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* What Are Cookies */}
       <section className="py-20 bg-white">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               What Are Cookies?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Cookies are small text files stored on your device that help us provide a better website experience.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-center"
-            >
+            <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
                 <Cookie size={24} className="text-orange-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Small Files</h3>
               <p className="text-gray-600">Tiny text files stored on your device when you visit our website.</p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-center"
-            >
+            <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-yellow-100 rounded-full mb-4">
                 <Settings size={24} className="text-yellow-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Remember Preferences</h3>
               <p className="text-gray-600">Help us remember your settings and provide personalized content.</p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-center"
-            >
+            <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
                 <Shield size={24} className="text-blue-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Secure & Safe</h3>
               <p className="text-gray-600">Cookies cannot access personal files or install malware on your device.</p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -171,28 +137,19 @@ const CookiePolicyPage = () => {
       {/* Types of Cookies */}
       <section className="py-20 bg-gray-50">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Types of Cookies We Use
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               We use different types of cookies for various purposes. Here&apos;s what each type does.
             </p>
-          </motion.div>
+          </div>
 
           <div className="space-y-6">
-            {cookieTypes.map((cookie, index) => (
-              <motion.div
+            {cookieTypes.map((cookie) => (
+              <div
                 key={cookie.type}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
                 className="bg-white p-8 rounded-2xl shadow-sm"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
@@ -213,7 +170,7 @@ const CookiePolicyPage = () => {
                     <p className="text-gray-600 text-sm">{cookie.duration}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -222,34 +179,25 @@ const CookiePolicyPage = () => {
       {/* Cookie Management */}
       <section className="py-20 bg-white">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Managing Your Cookie Preferences
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               You have control over which cookies are stored on your device. Here are your options.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {cookieManagement.map((method, index) => (
-              <motion.div
+            {cookieManagement.map((method) => (
+              <div
                 key={method.method}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
                 className="bg-gray-50 p-6 rounded-xl text-center"
               >
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{method.method}</h3>
                 <p className="text-gray-600 mb-4">{method.description}</p>
                 <p className="text-gray-500 text-sm">{method.instructions}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -258,27 +206,16 @@ const CookiePolicyPage = () => {
       {/* Third-Party Cookies */}
       <section className="py-20 bg-gray-50">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Third-Party Cookies
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Some cookies are placed by third-party services that help us provide better functionality.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white p-8 rounded-2xl shadow-sm max-w-4xl mx-auto"
-          >
+          <div className="bg-white p-8 rounded-2xl shadow-sm max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Analytics Services</h3>
@@ -297,20 +234,14 @@ const CookiePolicyPage = () => {
                 </ul>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Contact Information */}
       <section className="py-20 bg-white">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
+          <div className="text-center">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Questions About Cookies?
             </h2>
@@ -325,7 +256,7 @@ const CookiePolicyPage = () => {
                   <Lock size={24} className="text-orange-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
-                <p className="text-gray-600">privacy@amtop.ai</p>
+                <p className="text-gray-600">admin@amtop.in</p>
               </div>
               
               <div className="text-center">
@@ -333,10 +264,10 @@ const CookiePolicyPage = () => {
                   <Users size={24} className="text-yellow-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
-                <p className="text-gray-600">+1 (555) 123-4567</p>
+                <p className="text-gray-600">+91 9265249821</p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

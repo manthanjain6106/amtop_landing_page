@@ -47,7 +47,7 @@ const FAQ = () => {
   return (
     <section id="faq" className="section-padding bg-white">
       <div className="container-max">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
           {/* Left Column - Title and Description */}
           <motion.div
             ref={ref}
@@ -56,10 +56,10 @@ const FAQ = () => {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
               Can&apos;t find what you&apos;re looking for? Contact our support team and we&apos;ll get back to you shortly.
             </p>
             

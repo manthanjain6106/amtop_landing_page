@@ -53,7 +53,7 @@ export function useEmailSubscription(): UseEmailSubscriptionReturn {
         setError(errorMessage);
         return { success: false, error: errorMessage };
       }
-    } catch (err) {
+    } catch {
       const errorMessage = 'Network error. Please try again.';
       setError(errorMessage);
       return { success: false, error: errorMessage };

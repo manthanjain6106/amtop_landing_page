@@ -114,9 +114,9 @@ const ScrollContainer = () => {
   return (
     <section className="relative min-h-screen bg-white">
       <div className="container-max">
-        <div className="grid lg:grid-cols-2 gap-0 items-start min-h-screen">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start min-h-screen">
           {/* Left Content - Changes based on scroll */}
-          <div className="sticky top-24 h-screen flex items-center justify-center p-8">
+          <div className="sticky top-24 h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8">
             <motion.div
               key={currentSection}
               initial={{ opacity: 0, y: 20 }}
@@ -125,16 +125,16 @@ const ScrollContainer = () => {
               className="text-center max-w-md"
             >
               <div className="mb-8">
-                <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
-                  <currentSectionData.icon size={32} className="text-white" />
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                  <currentSectionData.icon size={24} className="sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4">
-                  {currentSectionData.title}
-                </h2>
-                <p className="text-lg text-gray-600 mb-6">
-                  {currentSectionData.subtitle}
-                </p>
-                <p className="text-base text-gray-700 leading-relaxed mb-8">
+                                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-4">
+                    {currentSectionData.title}
+                  </h2>
+                  <p className="text-base sm:text-lg text-gray-600 mb-6">
+                    {currentSectionData.subtitle}
+                  </p>
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-8">
                   {currentSectionData.description}
                 </p>
                 
@@ -151,7 +151,7 @@ const ScrollContainer = () => {
           </div>
 
           {/* Right Scrollable Content */}
-          <div className="h-screen overflow-auto scrollbar-hide scroll-container" ref={scrollContainerRef}>
+          <div className="h-screen overflow-auto scrollbar-hide scroll-container hidden lg:block" ref={scrollContainerRef}>
             <div className="min-h-full">
               {sections.map((section) => (
                 <div
@@ -159,7 +159,7 @@ const ScrollContainer = () => {
                   id={section.id}
                   className="h-screen flex items-center justify-center p-8 border-l border-gray-200"
                 >
-                  <div className="text-center max-w-md">
+                  <div className="text-center max-w-md px-4 sm:px-0">
                     <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
                       <section.icon size={24} className="text-gray-600" />
                     </div>
@@ -173,6 +173,48 @@ const ScrollContainer = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile-Friendly Alternative */}
+      <div className="lg:hidden bg-gray-50 py-16">
+        <div className="container-max">
+          <div className="space-y-12">
+            {sections.map((section, index) => (
+              <motion.div
+                key={section.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg"
+              >
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                    <section.icon size={24} className="text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-black mb-4">
+                    {section.title}
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    {section.subtitle}
+                  </p>
+                  <p className="text-gray-700 leading-relaxed mb-6">
+                    {section.description}
+                  </p>
+                  
+                  <div className="space-y-3">
+                    {section.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center justify-center gap-3">
+                        <div className="w-2 h-2 bg-black rounded-full"></div>
+                        <span className="text-sm font-medium text-gray-800">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

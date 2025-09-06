@@ -1,0 +1,17 @@
+# Email Configuration for Contact Form
+# Create a .env.local file with these values
+
+# Gmail credentials (use App Password, not regular password)
+EMAIL_USER=amarnath@amtop.in
+EMAIL_PASS=your_gmail_app_password_here
+
+# Email Recipients (multiple recipients will receive contact form submissions)
+# - amarnath@amtop.in
+# - anant@amtop.in  
+# - jainmanthan6106@gmail.com
+
+# Instructions to get Gmail App Password:
+# 1. Enable 2-factor authentication on your Gmail account
+# 2. Go to Google Account settings → Security → 2-Step Verification → App passwords
+# 3. Generate a password for "Mail"
+# 4. Use that password here (not your regular Gmail password)

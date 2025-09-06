@@ -2,16 +2,9 @@
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { Users, MessageSquare, Calendar, Award, Star, TrendingUp, Globe, Heart, Share2, BookOpen } from 'lucide-react';
 
 const CommunityPage = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   const communityStats = [
     { number: '50K+', label: 'Active Members', icon: Users },
     { number: '100+', label: 'Countries', icon: Globe },
@@ -144,53 +137,40 @@ const CommunityPage = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+      <section className="section-padding-top section-padding-bottom bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               Join Our Community
             </h1>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
               Connect with fellow AI enthusiasts, share knowledge, and learn from the best in the industry. 
               Our community is where innovation meets collaboration.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <button
                 className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors duration-200"
               >
                 Join Community
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              </button>
+              <button
                 className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors duration-200"
               >
                 Browse Forums
-              </motion.button>
+              </button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Community Stats */}
-      <section className="py-20 bg-white">
+      <section className="section-padding bg-white">
         <div className="container-max">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {communityStats.map((stat, index) => (
-              <motion.div
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8">
+            {communityStats.map((stat) => (
+              <div
                 key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
                 className="text-center"
               >
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
@@ -198,37 +178,28 @@ const CommunityPage = () => {
                 </div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
                 <div className="text-gray-600">{stat.label}</div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Discussion Forums */}
-      <section className="py-20 bg-gray-50">
+      <section className="section-padding bg-gray-50">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Active Discussions
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
               Join the conversation in our community forums. Ask questions, share insights, and learn from peers.
             </p>
-          </motion.div>
+          </div>
 
           <div className="space-y-4">
-            {discussionTopics.map((topic, index) => (
-              <motion.div
+            {discussionTopics.map((topic) => (
+              <div
                 key={topic.title}
-                initial={{ opacity: 0, x: -20 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
                 className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer"
               >
                 <div className="flex items-start justify-between">
@@ -263,18 +234,16 @@ const CommunityPage = () => {
                     </button>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
           <div className="text-center mt-8">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <button
               className="bg-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors duration-200"
             >
               View All Discussions
-            </motion.button>
+            </button>
           </div>
         </div>
       </section>
@@ -282,28 +251,19 @@ const CommunityPage = () => {
       {/* Upcoming Events */}
       <section className="py-20 bg-white">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Upcoming Events
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Join our virtual and in-person events to learn, network, and grow your skills.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {upcomingEvents.map((event, index) => (
-              <motion.div
+            {upcomingEvents.map((event) => (
+              <div
                 key={event.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
                 className="bg-white border border-gray-200 p-6 rounded-xl hover:border-blue-300 transition-colors duration-300"
               >
                 <div className="flex items-center gap-2 mb-4">
@@ -317,14 +277,12 @@ const CommunityPage = () => {
                   <div>👥 {event.attendees} attendees</div>
                   <div>🎤 {event.speaker}</div>
                 </div>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                <button
                   className="w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
                 >
                   Register Now
-                </motion.button>
-              </motion.div>
+                </button>
+              </div>
             ))}
           </div>
         </div>
@@ -333,28 +291,19 @@ const CommunityPage = () => {
       {/* User Groups */}
       <section className="py-20 bg-gray-50">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Join User Groups
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Connect with like-minded professionals in specialized groups tailored to your interests and needs.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {userGroups.map((group, index) => (
-              <motion.div
+            {userGroups.map((group) => (
+              <div
                 key={group.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
                 className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer"
               >
                 <div className="flex items-start justify-between mb-4">
@@ -368,15 +317,13 @@ const CommunityPage = () => {
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-500">👥 {group.members} members</span>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                  <button
                     className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200"
                   >
                     Join Group
-                  </motion.button>
+                  </button>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -385,28 +332,19 @@ const CommunityPage = () => {
       {/* Featured Contributors */}
       <section className="py-20 bg-white">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Featured Contributors
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Meet the community members who go above and beyond to help others succeed.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredContributors.map((contributor, index) => (
-              <motion.div
+            {featuredContributors.map((contributor) => (
+              <div
                 key={contributor.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
                 className="text-center p-6 bg-gray-50 rounded-xl"
               >
                 <div className="text-4xl mb-4">{contributor.avatar}</div>
@@ -423,7 +361,7 @@ const CommunityPage = () => {
                 <div className="text-sm text-gray-500">
                   {contributor.contributions} contributions
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -432,13 +370,7 @@ const CommunityPage = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center text-white"
-          >
+          <div className="text-center text-white">
             <h2 className="text-4xl font-bold mb-6">
               Ready to Join the Community?
             </h2>
@@ -446,22 +378,18 @@ const CommunityPage = () => {
               Connect with thousands of AI professionals, share your knowledge, and accelerate your growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <button
                 className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-200"
               >
                 Get Started Today
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-200"
+              </button>
+              <button
+                className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-all duration-200"
               >
                 Learn More
-              </motion.button>
+              </button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

@@ -2,16 +2,9 @@
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { FileText, Shield, Users, Globe, Calendar, Mail, Phone, AlertTriangle } from 'lucide-react';
 
 const TermsOfServicePage = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   const lastUpdated = 'December 10, 2024';
   const effectiveDate = 'December 10, 2024';
 
@@ -87,13 +80,7 @@ const TermsOfServicePage = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
-          >
+          <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               Terms of Service
             </h1>
@@ -111,40 +98,31 @@ const TermsOfServicePage = () => {
                 <span>Effective Date: {effectiveDate}</span>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Key Terms */}
       <section className="py-20 bg-white">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Key Terms
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Important terms that govern your relationship with amTop.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {keyTerms.map((term, index) => (
-              <motion.div
+            {keyTerms.map((term) => (
+              <div
                 key={term.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
                 className="bg-gray-50 p-6 rounded-xl"
               >
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{term.title}</h3>
                 <p className="text-gray-600">{term.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -153,27 +131,16 @@ const TermsOfServicePage = () => {
       {/* Prohibited Activities */}
       <section className="py-20 bg-gray-50">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Prohibited Activities
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Activities that are not allowed when using our services.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white p-8 rounded-2xl shadow-sm max-w-4xl mx-auto"
-          >
+          <div className="bg-white p-8 rounded-2xl shadow-sm max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {prohibitedActivities.map((activity, index) => (
                 <div key={index} className="flex items-start gap-3">
@@ -182,41 +149,32 @@ const TermsOfServicePage = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Service Terms */}
       <section className="py-20 bg-white">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Service Terms
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Important details about how our services work and what you can expect.
             </p>
-          </motion.div>
+          </div>
 
           <div className="space-y-6">
-            {serviceTerms.map((term, index) => (
-              <motion.div
+            {serviceTerms.map((term) => (
+              <div
                 key={term.category}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
                 className="bg-gray-50 p-6 rounded-xl"
               >
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{term.category}</h3>
                 <p className="text-gray-600 mb-3">{term.description}</p>
                 <p className="text-gray-500 text-sm">{term.details}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -225,33 +183,24 @@ const TermsOfServicePage = () => {
       {/* Payment Terms */}
       <section className="py-20 bg-gray-50">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Payment Terms
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Important information about billing, payments, and pricing.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {paymentTerms.map((term, index) => (
-              <motion.div
+            {paymentTerms.map((term) => (
+              <div
                 key={term.term}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
                 className="bg-white p-6 rounded-xl border border-gray-200"
               >
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">{term.term}</h3>
                 <p className="text-gray-600">{term.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -260,13 +209,7 @@ const TermsOfServicePage = () => {
       {/* Contact Information */}
       <section className="py-20 bg-white">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
+          <div className="text-center">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Questions About These Terms?
             </h2>
@@ -280,7 +223,7 @@ const TermsOfServicePage = () => {
                   <Mail size={24} className="text-blue-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
-                <p className="text-gray-600">legal@amtop.ai</p>
+                <p className="text-gray-600">admin@amtop.in</p>
               </div>
               
               <div className="text-center">
@@ -288,10 +231,10 @@ const TermsOfServicePage = () => {
                   <Phone size={24} className="text-green-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
-                <p className="text-gray-600">+1 (555) 123-4567</p>
+                <p className="text-gray-600">+91 9265249821</p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

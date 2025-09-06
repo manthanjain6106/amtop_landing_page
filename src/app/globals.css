@@ -27,15 +27,23 @@ body {
 /* Custom container utilities */
 @layer components {
   .container-max {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12;
   }
   
   .container-sm {
-    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12;
   }
   
   .container-lg {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12;
+  }
+  
+  .container-xl {
+    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12;
+  }
+  
+  .container-2xl {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12;
   }
 }
 
@@ -98,5 +106,106 @@ body {
   /* Smooth scrolling for scroll containers */
   .scroll-container {
     scroll-behavior: smooth;
+  }
+  
+  /* Responsive spacing utilities */
+  .section-padding {
+    @apply py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32;
+  }
+  
+  .section-padding-top {
+    @apply pt-16 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32;
+  }
+  
+  .section-padding-bottom {
+    @apply pb-12 sm:pb-16 md:pb-20 lg:pb-24 xl:pb-32;
+  }
+  
+  /* Responsive grid utilities */
+  .grid-responsive-2 {
+    @apply grid grid-cols-1 sm:grid-cols-2;
+  }
+  
+  .grid-responsive-3 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+  }
+  
+  .grid-responsive-4 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4;
+  }
+  
+  /* Responsive gap utilities */
+  .gap-responsive {
+    @apply gap-4 sm:gap-6 md:gap-8 lg:gap-12;
+  }
+  
+  .gap-responsive-sm {
+    @apply gap-3 sm:gap-4 md:gap-6 lg:gap-8;
+  }
+  
+  .gap-responsive-lg {
+    @apply gap-6 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20;
+  }
+  
+  /* Responsive text alignment */
+  .text-responsive-center {
+    @apply text-center sm:text-left lg:text-center;
+  }
+  
+  .text-responsive-left {
+    @apply text-left;
+  }
+  
+  .text-responsive-right {
+    @apply text-right;
+  }
+  
+  /* Responsive flex utilities */
+  .flex-responsive-col {
+    @apply flex-col sm:flex-row;
+  }
+  
+  .flex-responsive-row {
+    @apply flex-row sm:flex-col lg:flex-row;
+  }
+  
+  /* Responsive visibility */
+  .hidden-responsive-sm {
+    @apply hidden sm:block;
+  }
+  
+  .hidden-responsive-md {
+    @apply hidden md:block;
+  }
+  
+  .hidden-responsive-lg {
+    @apply hidden lg:block;
+  }
+  
+  .block-responsive-sm {
+    @apply block sm:hidden;
+  }
+  
+  .block-responsive-md {
+    @apply block md:hidden;
+  }
+  
+  .block-responsive-lg {
+    @apply block lg:hidden;
+  }
+  
+  /* Form element improvements */
+  select {
+    color: #111827 !important; /* text-gray-900 */
+    background-color: #ffffff !important;
+  }
+  
+  select option {
+    color: #111827 !important; /* text-gray-900 */
+    background-color: #ffffff !important;
+  }
+  
+  select:focus {
+    color: #111827 !important;
   }
 }

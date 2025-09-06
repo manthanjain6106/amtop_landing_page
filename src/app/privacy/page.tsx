@@ -2,16 +2,9 @@
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { Shield, Eye, Lock, Database, Users, Globe, Calendar, Mail, Phone } from 'lucide-react';
 
 const PrivacyPolicyPage = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   const lastUpdated = 'December 10, 2024';
   const effectiveDate = 'December 10, 2024';
 
@@ -117,13 +110,7 @@ const PrivacyPolicyPage = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
-          >
+          <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               Privacy Policy
             </h1>
@@ -142,35 +129,26 @@ const PrivacyPolicyPage = () => {
                 <span>Effective Date: {effectiveDate}</span>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Privacy Principles */}
       <section className="py-20 bg-white">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Our Privacy Principles
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               We follow these core principles to ensure your privacy and data security.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {privacyPrinciples.map((principle, index) => (
-              <motion.div
+            {privacyPrinciples.map((principle) => (
+              <div
                 key={principle.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
                 className="text-center p-6"
               >
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
@@ -178,7 +156,7 @@ const PrivacyPolicyPage = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{principle.title}</h3>
                 <p className="text-gray-600">{principle.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -187,28 +165,19 @@ const PrivacyPolicyPage = () => {
       {/* Information We Collect */}
       <section className="py-20 bg-gray-50">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Information We Collect
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               We collect only the information necessary to provide and improve our services.
             </p>
-          </motion.div>
+          </div>
 
           <div className="space-y-8">
-            {dataCategories.map((category, index) => (
-              <motion.div
+            {dataCategories.map((category) => (
+              <div
                 key={category.category}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
                 className="bg-white p-8 rounded-2xl shadow-sm"
               >
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">{category.category}</h3>
@@ -229,7 +198,7 @@ const PrivacyPolicyPage = () => {
                     <p className="text-gray-600">{category.purpose}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -238,81 +207,45 @@ const PrivacyPolicyPage = () => {
       {/* How We Use Your Information */}
       <section className="py-20 bg-white">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               How We Use Your Information
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               We use your information responsibly to provide and improve our services.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-blue-50 p-6 rounded-xl"
-            >
+            <div className="bg-blue-50 p-6 rounded-xl">
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Service Delivery</h3>
               <p className="text-gray-600">To provide our AI automation services, process transactions, and deliver customer support.</p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-green-50 p-6 rounded-xl"
-            >
+            <div className="bg-green-50 p-6 rounded-xl">
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Service Improvement</h3>
               <p className="text-gray-600">To analyze usage patterns, improve features, and develop new capabilities.</p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-purple-50 p-6 rounded-xl"
-            >
+            <div className="bg-purple-50 p-6 rounded-xl">
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Communication</h3>
               <p className="text-gray-600">To send important updates, respond to inquiries, and provide technical support.</p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-orange-50 p-6 rounded-xl"
-            >
+            <div className="bg-orange-50 p-6 rounded-xl">
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Security</h3>
               <p className="text-gray-600">To protect against fraud, ensure account security, and maintain system integrity.</p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="bg-red-50 p-6 rounded-xl"
-            >
+            <div className="bg-red-50 p-6 rounded-xl">
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Compliance</h3>
               <p className="text-gray-600">To meet legal obligations, enforce our terms, and protect our rights.</p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="bg-indigo-50 p-6 rounded-xl"
-            >
+            <div className="bg-indigo-50 p-6 rounded-xl">
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Personalization</h3>
               <p className="text-gray-600">To customize your experience and provide relevant content and recommendations.</p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -320,28 +253,19 @@ const PrivacyPolicyPage = () => {
       {/* Data Sharing */}
       <section className="py-20 bg-gray-50">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Data Sharing and Disclosure
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               We do not sell your personal information. We only share data when necessary and with appropriate safeguards.
             </p>
-          </motion.div>
+          </div>
 
           <div className="space-y-6">
-            {dataSharing.map((partner, index) => (
-              <motion.div
+            {dataSharing.map((partner) => (
+              <div
                 key={partner.partner}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
                 className="bg-white p-6 rounded-xl border border-gray-200"
               >
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{partner.partner}</h3>
@@ -359,7 +283,7 @@ const PrivacyPolicyPage = () => {
                     <p className="text-gray-600 text-sm">{partner.safeguards}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -368,28 +292,19 @@ const PrivacyPolicyPage = () => {
       {/* Your Rights */}
       <section className="py-20 bg-white">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Your Privacy Rights
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               You have control over your personal data. Here are your rights and how to exercise them.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {userRights.map((right, index) => (
-              <motion.div
+            {userRights.map((right) => (
+              <div
                 key={right.right}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
                 className="bg-gray-50 p-6 rounded-xl text-center"
               >
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
@@ -397,7 +312,7 @@ const PrivacyPolicyPage = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{right.right}</h3>
                 <p className="text-gray-600">{right.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -406,28 +321,17 @@ const PrivacyPolicyPage = () => {
       {/* Data Security */}
       <section className="py-20 bg-gray-50">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Data Security
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               We implement comprehensive security measures to protect your data.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white p-8 rounded-2xl"
-            >
+            <div className="bg-white p-8 rounded-2xl">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Technical Safeguards</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
@@ -447,14 +351,9 @@ const PrivacyPolicyPage = () => {
                   <span className="text-gray-600">24/7 monitoring and threat detection</span>
                 </li>
               </ul>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white p-8 rounded-2xl"
-            >
+            <div className="bg-white p-8 rounded-2xl">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Organizational Measures</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
@@ -474,7 +373,7 @@ const PrivacyPolicyPage = () => {
                   <span className="text-gray-600">Regular privacy impact assessments</span>
                 </li>
               </ul>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -482,13 +381,7 @@ const PrivacyPolicyPage = () => {
       {/* Contact Information */}
       <section className="py-20 bg-white">
         <div className="container-max">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
+          <div className="text-center">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Contact Us
             </h2>
@@ -522,7 +415,7 @@ const PrivacyPolicyPage = () => {
                 <p className="text-gray-600">Privacy Request Form</p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
