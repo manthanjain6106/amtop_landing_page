@@ -6,8 +6,6 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
   Target, 
-  Award, 
-  Zap, 
   Shield,
   Lightbulb,
   TrendingUp
@@ -23,22 +21,22 @@ const AboutPage = () => {
     {
       icon: Lightbulb,
       title: 'Innovation First',
-      description: 'We constantly push boundaries to create cutting-edge AI solutions that transform industries.'
+      description: 'AI that actually saves you time — not buzzwords. Every update is built to cut the busywork and give you insights you can act on today.'
     },
     {
       icon: Target,
       title: 'Customer Success',
-      description: 'Your success is our success. We\'re committed to helping you achieve your business goals.'
+      description: 'Your growth is the only metric that matters. From 24/7 support to tailored insights, we\'re here to make sure you hit your goals faster.'
     },
     {
       icon: Shield,
       title: 'Trust & Security',
-      description: 'Enterprise-grade security and compliance built into every aspect of our platform.'
+      description: 'Your data, protected. Enterprise-grade security and compliance come standard, so you can focus on scaling with peace of mind.'
     },
     {
       icon: TrendingUp,
       title: 'Continuous Growth',
-      description: 'We evolve with technology and market demands to stay ahead of the curve.'
+      description: 'We don\'t stand still — and neither should your marketing. amTop evolves with new tech and trends so your team always stays ahead.'
     }
   ];
 
@@ -108,15 +106,37 @@ const AboutPage = () => {
             >
               About <span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-600">amTop</span>
             </motion.h1>
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mb-8"
+              className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mb-8 space-y-4"
             >
-              We&apos;re on a mission to democratize AI and make intelligent automation accessible to businesses of all sizes. 
-              Our platform empowers teams to work smarter, not harder.
-            </motion.p>
+              <p>
+                If you&apos;re running a startup or managing marketing, you know the grind:
+                switching between Google Analytics, Search Console, Meta ads, and a dozen
+                other tools… only to spend hours piecing together insights that should&apos;ve been
+                obvious.
+              </p>
+              <p>
+                We created <span className="font-bold text-black">amTop</span> to fix that.
+              </p>
+              <p>
+                It&apos;s an AI-powered dashboard that unifies your analytics, competitor insights,
+                and ad automation into one clean platform. Instead of drowning in
+                spreadsheets, you&apos;ll get real-time answers, smarter campaigns, and strategies
+                tailored to your growth.
+              </p>
+              <p>
+                Our edge? We don&apos;t just show you data — we tell you what to do with it.
+                amTop actively suggests winning campaigns, optimizes ads 24/7, and frees up
+                20+ hours every week so your team can focus on scaling, not busywork.
+              </p>
+              <p>
+                For ambitious teams worldwide, amTop is more than software. It&apos;s your always-
+                on marketing command center.
+              </p>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -135,23 +155,18 @@ const AboutPage = () => {
                 Our Mission
               </h2>
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6">
-                We believe that every business, regardless of size or industry, should have access to the power of AI. 
-                Our mission is to break down the barriers to AI adoption and create tools that make complex automation 
-                simple and accessible.
+                Most teams waste hours every week bouncing between tools, chasing reports,
+                and guessing at what actually works. We believe that&apos;s broken.
+              </p>
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6">
+                Our mission with <span className="font-bold text-black">amTop</span> is to change that — by making AI-powered marketing
+                simple, fast, and actionable for every business. No jargon, no complexity, just a
+                clear path to smarter campaigns and faster growth.
               </p>
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-8">
-                By combining cutting-edge AI technology with intuitive design, we&apos;re helping companies transform their 
-                operations, reduce costs, and focus on what matters most - growing their business and serving their customers.
+                Because the less time you spend on grunt work, the more time you can spend
+                building the company you actually dream about.
               </p>
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
-                <div className="w-12 h-12 bg-gradient-to-br from-black to-gray-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Target className="text-white" size={24} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Vision 2030</h3>
-                  <p className="text-gray-600 text-sm sm:text-base">AI-powered businesses in every industry</p>
-                </div>
-              </div>
             </motion.div>
 
           </div>
@@ -170,7 +185,11 @@ const AboutPage = () => {
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Values</h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              These core values guide everything we do, from product development to customer support.
+                We believe the best tools are the ones that actually move the needle — not the
+                ones that add more dashboards to your day. That&apos;s why our values are simple:
+                keep things clear, save time, and put growth first. Every feature inside amTop
+                was built with that mindset — and below, you&apos;ll see exactly how we&apos;ve turned
+                those values into tools that help your business scale faster.
             </p>
           </motion.div>
           
@@ -209,7 +228,9 @@ const AboutPage = () => {
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">Meet Our Team</h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              The brilliant minds behind amTop, dedicated to transforming how businesses work with AI.
+              Tools don&apos;t build themselves. People do. And at Amtp, our team is obsessed
+              with one thing: helping you grow without wasting time. Scroll down and see the
+              folks who power your marketing command center.
             </p>
           </motion.div>
           
@@ -247,7 +268,7 @@ const AboutPage = () => {
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Journey</h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              From startup to industry leader, here are the key milestones in our company&apos;s growth.
+              From late-night brainstorms to a global platform
             </p>
           </motion.div>
           

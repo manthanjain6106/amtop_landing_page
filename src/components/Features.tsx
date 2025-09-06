@@ -22,8 +22,8 @@ const Features = () => {
   const features = [
     {
       icon: Brain,
-      title: 'Intelligent Automation',
-      description: 'AI agents that learn from your workflows and continuously optimize performance.',
+      title: 'Intelligent Marketing Automation',
+      description: 'AI that learns your marketing patterns and takes the busywork off your plate.',
       color: 'from-blue-600 to-purple-600',
       highlight: 'Smart Learning',
       href: '#intelligent-automation'

@@ -11,26 +11,26 @@ const ScrollContainer = () => {
   const sections = [
     {
       id: 'intelligent-automation',
-      title: 'Intelligent Automation',
-      subtitle: 'AI agents that learn from your workflows',
-      description: 'Our AI agents don\'t just follow rules—they learn from your workflows, adapt to changes, and continuously optimize performance for maximum efficiency.',
+      title: 'Intelligent Marketing Automation',
+      subtitle: 'AI that learns your marketing patterns and takes the busywork off your plate.',
+      description: 'No more wasting time on boring tasks. See trends as they happen, keep an eye on competitors, and let your campaigns get better on their own — all from one easy dashboard that runs on smart automation.',
       icon: Brain,
       features: [
-        'Continuous Learning',
-        'Adaptive Intelligence', 
-        'Smart Optimization'
+        'AI that evolves with your marketing data',
+        'Campaigns get sharper every day',
+        'Free up your time to focus on growth'
       ]
     },
     {
       id: 'lightning-fast',
-      title: 'Lightning Fast',
-      subtitle: 'Execute complex tasks in seconds',
-      description: 'Execute complex tasks in seconds, not hours. Scale your operations instantly with our optimized performance engine.',
+      title: 'Lightning Fast Insights',
+      subtitle: 'Stop waiting — start acting.',
+      description: 'Don\'t wait hours for updates. Get refreshed insights in seconds — faster than Google Search Console. Whether it\'s tracking performance, spotting issues, or scaling operations, everything runs at lightning speed so you can move ahead without delays.',
       icon: Zap,
       features: [
-        '10x Faster Execution',
-        'Instant Scaling',
-        'Optimized Performance'
+        'Insights when you need them, not hours later',
+        'Handle more without slowing down',
+        'Smooth, fast, and built for growth'
       ]
     },
     {
@@ -40,21 +40,21 @@ const ScrollContainer = () => {
       description: 'Your data is protected by enterprise-grade security with SOC 2 compliance, end-to-end encryption, and military-grade protection protocols.',
       icon: Shield,
       features: [
-        'SOC 2 Type II Compliant',
-        'End-to-End Encryption',
-        'Zero-Knowledge Architecture'
+        'Trusted by the world\'s top platforms',
+        'Protection at every step',
+        'Only you can access your data'
       ]
     },
     {
       id: 'real-time-analytics',
       title: 'Real-time Analytics',
-      subtitle: 'Monitor performance with live dashboards',
-      description: 'Monitor performance, track metrics, and gain insights with live dashboards that update in real-time.',
+      subtitle: 'We bring the insights, you make the moves.',
+      description: 'Forget digging through endless reports. Your key metrics, live trends, and competitor moves are all delivered in real time. Everything\'s prepared and ready — all you need to do is act.',
       icon: BarChart3,
       features: [
-        'Live Dashboards',
-        'Real-time Metrics',
-        'Instant Insights'
+        'Performance at a glance, always updated',
+        'The numbers you need, right when you need them',
+        'Decisions made simple, opportunities made obvious'
       ]
     },
     {
@@ -72,13 +72,13 @@ const ScrollContainer = () => {
     {
       id: 'always-on',
       title: 'Always On',
-      subtitle: '24/7 continuous operation',
-      description: 'Your AI agents never sleep. Continuous operation around the clock with automatic failover and monitoring.',
+      subtitle: 'AI that never sleeps, with a team that\'s always awake for you.',
+      description: 'Day or night, your operations never stop. AI monitors everything 24/7, and our team is always ready when you need real support. Reliable, nonstop, and worry-free.',
       icon: Clock,
       features: [
-        '24/7 Operation',
-        'Automatic Failover',
-        'Continuous Monitoring'
+        'Your business runs round the clock',
+        'Zero downtime, no interruptions',
+        'AI plus humans, keeping watch always'
       ]
     }
   ];

@@ -72,8 +72,8 @@ const BlogPage = () => {
   const popularTags = tags.map(tag => tag.title);
 
   const newsletterSignup = {
-    title: 'Stay Updated with Our Latest Insights',
-    description: 'Get the latest articles, tips, and industry insights delivered directly to your inbox. Join thousands of professionals staying ahead of the curve.',
+    title: 'Get the good stuff, straight to your inbox',
+    description: 'No spam, no fluff — just real marketing insights, growth tips, and fresh ideas you can use right away. Join other founders and marketers who get smarter with every email.',
     placeholder: 'Enter your email address'
   };
 
@@ -108,8 +108,9 @@ const BlogPage = () => {
               amTop Blog
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Insights, tips, and stories about AI agents, automation, and the future of business. 
-              Stay ahead with expert knowledge and practical advice.
+              Growing a business is tough. We&apos;ve been there. That&apos;s why our blog is packed
+              with straight-to-the-point lessons, stories, and playbooks you can actually use
+              — no jargon, no fluff.
             </p>
             
             {/* Search Bar */}

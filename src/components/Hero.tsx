@@ -74,7 +74,7 @@ const Hero = () => {
           >
             <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-blue-500 rounded-full animate-pulse"></div>
             <span className="font-semibold">
-              <span className="hidden sm:inline">Trusted by fast-moving engineering teams worldwide</span>
+              <span className="hidden sm:inline">Trusted by fast-moving founders and marketers worldwide</span>
               <span className="sm:hidden">Trusted by engineering teams</span>
             </span>
             <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-purple-500 rounded-full animate-pulse" style={{ animationDelay: "0.5s" }}></div>
@@ -83,12 +83,13 @@ const Hero = () => {
           {/* Enhanced Main Headline with 3D effect */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-gray-900 tracking-tight leading-tight mb-8 sm:mb-10"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 tracking-tight leading-tight mb-8 sm:mb-10"
             style={{ textShadow: "0 4px 8px rgba(0,0,0,0.1)" }}
           >
-            Stop losing time on{' '}
+            <span className="text-gray-900">Agentic Marketing Intelligence</span>
+            <br />
             <span className="text-blue-600 relative">
-              repetitive tasks
+              From Creation to Conversion
               <motion.div
                 className="absolute inset-0 bg-blue-600/20 blur-xl"
                 animate={{
@@ -109,9 +110,10 @@ const Hero = () => {
             variants={itemVariants}
             className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-5xl sm:max-w-6xl mx-auto mb-10 sm:mb-14 px-4 font-medium"
           >
-            Transform your engineering workflow with intelligent AI agents that work 24/7. 
-            <span className="font-bold text-blue-600"> Save 20+ hours per week</span> while your team focuses on innovation, 
-            not maintenance. From deployment automation to intelligent monitoring, we handle the repetitive work so you can build what matters.
+            While you&apos;re busy wasting hours on reports, your
+            competitors are moving faster. Get all your insights and ads in
+            one dashboard — and save your 20+ hours every week to focus
+            on scaling.
           </motion.p>
 
           {/* Enhanced CTA Buttons */}
@@ -123,7 +125,7 @@ const Hero = () => {
               {...buttonVariants}
               className="bg-gradient-to-r from-black via-gray-800 to-black text-white font-bold py-5 sm:py-6 md:py-7 px-10 sm:px-12 md:px-16 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 text-lg sm:text-xl flex items-center gap-3 justify-center group relative overflow-hidden hover:bg-black"
             >
-              <span className="relative z-10">Start building for free</span>
+              <span className="relative z-10">Start Free</span>
               <ArrowRight size={22} className="sm:w-7 sm:h-7 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
             </motion.button>
             
@@ -161,7 +163,7 @@ const Hero = () => {
             className="flex flex-col items-center gap-3 text-gray-500"
           >
             <span className="text-sm font-semibold bg-white/70 px-4 py-2 rounded-full backdrop-blur-sm">
-              Discover how AMTOP transforms engineering teams
+              Powerful features that save you time and grow your business
             </span>
             <motion.div
               animate={{ y: [0, 10, 0] }}

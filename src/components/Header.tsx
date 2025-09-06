@@ -123,7 +123,7 @@ const Header = () => {
                 transition={{ duration: 0.2 }}
                 className="bg-black hover:bg-gray-800 text-white font-semibold py-2.5 sm:py-3 px-4 sm:px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center gap-2 text-sm xl:text-base"
               >
-                Start building
+                Start Free
                 <ArrowRight size={16} />
               </motion.button>
             </div>
@@ -171,7 +171,7 @@ const Header = () => {
                       onClick={() => setIsMenuOpen(false)}
                       className="w-full bg-black hover:bg-gray-800 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 text-base"
                     >
-                      Start building
+                      Start Free
                       <ArrowRight size={18} />
                     </motion.button>
                   </div>

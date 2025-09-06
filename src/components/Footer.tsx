@@ -30,14 +30,12 @@ const Footer = () => {
       title: 'Company',
       links: [
         { name: 'About Us', href: '/about' },
-        { name: 'Press', href: '/press' },
         { name: 'Contact', href: '/contact' }
       ]
     },
     {
       title: 'Resources',
       links: [
-        { name: 'Help Center', href: '/help' },
         { name: 'Community', href: '/community' },
         { name: 'Blog', href: '/blog' }
       ]
@@ -71,14 +69,13 @@ const Footer = () => {
                 <span className="text-xl sm:text-2xl font-bold text-gray-900">amTop</span>
               </div>
               <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
-                Transform your business with intelligent AI agents that automate workflows, 
-                optimize processes, and drive growth 24/7.
+                Your competitors won&apos;t wait. Stay ahead with AI that automates, optimizes, and grows nonstop. Enter your email to get started.
               </p>
               
               {/* Newsletter Signup */}
               <div className="mb-4 sm:mb-6">
                 <h4 className="text-xs sm:text-sm font-semibold text-gray-900 mb-2 sm:mb-3">
-                  Stay updated with our newsletter
+                  Stay updated with our blogs
                 </h4>
                 <form onSubmit={async (e) => {
                   e.preventDefault();

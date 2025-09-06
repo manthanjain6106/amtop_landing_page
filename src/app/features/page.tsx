@@ -86,11 +86,12 @@ export default function FeaturesPage() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Powerful Features for
-              <span className="text-blue-600"> Modern Teams</span>
+              All your marketing power in one dashboard
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Discover the comprehensive suite of features that make amTop the ultimate platform for businesses of all sizes.
+              Real-time data, smarter campaigns, and AI insights at your fingertips. No
+              more switching tabs, no more guesswork — just the tools you need to grow,
+              faster.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <motion.button
@@ -113,7 +114,7 @@ export default function FeaturesPage() {
       </section>
 
       {/* Features Grid */}
-      <section className="section-padding px-4">
+      <section className="py-8 px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div
             ref={ref}
@@ -123,10 +124,11 @@ export default function FeaturesPage() {
             className="text-center mb-16"
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Everything You Need to Succeed
+              Your advantages starts from here
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-              From basic functionality to advanced capabilities, our platform grows with your business.
+              amTop combines analytics, competitor tracking, and automation in ways
+              no single tool can. These are the features that turn busywork into real growth.
             </p>
           </motion.div>
 
@@ -212,7 +214,8 @@ export default function FeaturesPage() {
               Why Choose amTop?
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-              See how we stack up against the competition with our comprehensive feature set.
+              Most tools give you data. Amtp gives you answers. That&apos;s the difference that
+              saves you 20+ hours a week.
             </p>
           </motion.div>
 
@@ -253,10 +256,11 @@ export default function FeaturesPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Experience Our Features?
+              Ready to work smarter, not harder?
             </h2>
             <p className="text-lg sm:text-xl text-blue-100 mb-8">
-              Join thousands of teams already using amTop to transform their workflow.
+              Join the founders and teams using amTop to save hours every week and
+              turn marketing chaos into clear growth.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <motion.button

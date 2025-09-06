@@ -90,15 +90,16 @@ const ContactPage = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl text-gray-600 leading-relaxed mb-8"
             >
-              We&apos;d love to hear from you. Get in touch with our team to learn more 
-              about how amTop can transform your business.
+              Whether you&apos;re curious about amTop, need help with your account, or just want
+              to see how we can help your business grow — we&apos;re here. Drop us a message
+              and we&apos;ll get back to you quicker than your next refresh.
             </motion.p>
           </motion.div>
         </div>
       </section>
 
       {/* Contact Methods Section */}
-      <section className="section-padding bg-white">
+      <section className="py-4 bg-white">
         <div className="container-max">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -109,7 +110,7 @@ const ContactPage = () => {
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-6">How Can We Help?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Choose the best way to reach us based on your needs.
+              Need help? We&apos;re just a call or email away
             </p>
           </motion.div>
           
@@ -157,7 +158,7 @@ const ContactPage = () => {
                 Send Us a Message
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                We&apos;re here to help you succeed with AI automation.
+                Skip the guessing — reach out now
               </p>
               
               <div className="space-y-6">
