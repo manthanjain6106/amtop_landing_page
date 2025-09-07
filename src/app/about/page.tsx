@@ -42,28 +42,39 @@ const AboutPage = () => {
 
   const team = [
     {
-      name: 'Sarah Chen',
-      role: 'CEO & Founder',
-      bio: 'Former AI researcher at Stanford, passionate about democratizing AI for businesses.',
-      image: '/images/team/sarah.jpg'
+      name: 'Amarnath Pandey',
+      role: 'CEO & CTO',
+      bio: 'Visionary leader driving innovation and technical excellence at amTop.',
+      image: '/images/Amarnath_Pandey.png',
+      hasImage: true
     },
     {
-      name: 'Marcus Rodriguez',
-      role: 'CTO',
-      bio: 'Ex-Google engineer with 15+ years building scalable AI infrastructure.',
-      image: '/images/team/marcus.jpg'
+      name: 'Anant Dubey',
+      role: 'COO',
+      bio: 'Operations expert ensuring smooth execution and strategic growth initiatives.',
+      image: '/images/anant_dubey.png',
+      hasImage: true
     },
     {
-      name: 'Priya Patel',
-      role: 'Head of Product',
-      bio: 'Product visionary with experience at Slack and Notion, focused on user experience.',
-      image: '/images/team/priya.jpg'
+      name: 'Indresh Pandey',
+      role: 'VP of Marketing',
+      bio: 'Marketing strategist focused on growth and brand development.',
+      image: null,
+      hasImage: false
     },
     {
-      name: 'David Kim',
-      role: 'VP Engineering',
-      bio: 'Engineering leader who has scaled teams at Twitter and Stripe.',
-      image: '/images/team/david.jpg'
+      name: 'Manthan Jain',
+      role: 'VP of Engineering',
+      bio: 'Engineering leader building scalable and robust technical solutions.',
+      image: '/images/manthan_jain.jpg',
+      hasImage: true
+    },
+    {
+      name: 'Manashi Sheth',
+      role: 'VP of Designing',
+      bio: 'Creative director shaping user experience and visual excellence.',
+      image: null,
+      hasImage: false
     }
   ];
 
@@ -234,7 +245,7 @@ const AboutPage = () => {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 sm:gap-10 lg:gap-8">
             {team.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -244,8 +255,26 @@ const AboutPage = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full mx-auto mb-4 sm:mb-6 flex items-center justify-center">
-                  <span className="text-xl sm:text-2xl lg:text-4xl font-bold text-gray-600">{member.name.charAt(0)}</span>
+                <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden mx-auto mb-4 sm:mb-6">
+                  {member.hasImage && member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className={`w-full h-full object-cover ${member.name === 'Anant Dubey' ? 'scale-110 object-top' : ''} ${member.name === 'Manthan Jain' ? 'object-top' : ''} ${member.name === 'Amarnath Pandey' ? 'object-top' : ''}`}
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const parent = target.parentElement;
+                        if (parent) {
+                          parent.innerHTML = `<div class="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center"><span class="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-600">${member.name.charAt(0)}</span></div>`;
+                        }
+                      }}
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                      <span className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-600">{member.name.charAt(0)}</span>
+                    </div>
+                  )}
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
                 <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">{member.role}</p>
@@ -279,7 +308,7 @@ const AboutPage = () => {
             
             {milestones.map((milestone, index) => (
               <motion.div
-                key={milestone.year}
+                key={`${milestone.year}-${milestone.title}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -312,7 +341,7 @@ const AboutPage = () => {
           <div className="lg:hidden space-y-6">
             {milestones.map((milestone, index) => (
               <motion.div
-                key={milestone.year}
+                key={`${milestone.year}-${milestone.title}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
