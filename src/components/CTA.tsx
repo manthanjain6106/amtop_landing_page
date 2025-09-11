@@ -116,14 +116,17 @@ const CTA = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4"
           >
-            <motion.button
+            <motion.a
+              href="https://app.amtop.in/"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-xl sm:rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-200 flex items-center gap-2 sm:gap-3 text-base sm:text-lg w-full sm:w-auto justify-center"
             >
               Start Free Trial
               <ArrowRight size={16} className="sm:w-5 sm:h-5" />
-            </motion.button>
+            </motion.a>
             
             <motion.button
               whileHover={{ scale: 1.02, y: -2 }}

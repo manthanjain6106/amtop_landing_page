@@ -1,13 +1,13 @@
 'use client';
 
 import { 
-  Twitter, 
   Linkedin, 
-  Github, 
   Mail, 
   Phone, 
   MapPin,
-  ArrowRight
+  ArrowRight,
+  Youtube,
+  Instagram
 } from 'lucide-react';
 import { useState } from 'react';
 import { useEmailSubscription } from '@/utils/useEmailSubscription';
@@ -50,10 +50,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: 'Twitter', icon: Twitter, href: '#', color: 'hover:text-blue-400' },
-    { name: 'LinkedIn', icon: Linkedin, href: '#', color: 'hover:text-blue-600' },
-    { name: 'GitHub', icon: Github, href: '#', color: 'hover:text-gray-600' },
-    { name: 'Email', icon: Mail, href: '#', color: 'hover:text-red-500' }
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/company/amtop/posts/?feedView=all', color: 'hover:text-blue-600' },
+    { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/@amtopofficial', color: 'hover:text-red-600' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/amtopofficial?igsh=d2dicTdkd3g5ODls', color: 'hover:text-pink-600' },
+    { name: 'Email', icon: Mail, href: 'mailto:admin@amtop.in', color: 'hover:text-red-500' }
   ];
 
   return (

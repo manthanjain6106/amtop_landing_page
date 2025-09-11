@@ -47,37 +47,38 @@ const FAQ = () => {
   return (
     <section id="faq" className="section-padding bg-white">
       <div className="container-max">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-start">
           {/* Left Column - Title and Description */}
           <motion.div
             ref={ref}
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 tracking-tight">
               Frequently Asked Questions
             </h2>
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg xl:text-lg 2xl:text-xl text-gray-600 leading-relaxed">
               Can&apos;t find what you&apos;re looking for? Contact our support team and we&apos;ll get back to you shortly.
             </p>
             
             {/* Additional Info */}
-            <div className="bg-gray-50 rounded-2xl p-6">
-              <h3 className="font-semibold text-gray-900 mb-3">
+            <div className="bg-gray-50 rounded-2xl p-4 sm:p-6 xl:p-6 2xl:p-8">
+              <h3 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base xl:text-base 2xl:text-lg">
                 Still have questions?
               </h3>
-              <p className="text-gray-600 text-sm mb-4">
+              <p className="text-gray-600 text-xs sm:text-sm xl:text-sm 2xl:text-base mb-3 sm:mb-4">
                 Our team is here to help you get the most out of our platform.
               </p>
-              <motion.button
+              <motion.a
+                href="/contact"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-black text-white font-medium text-sm px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors duration-200"
+                className="bg-black text-white font-medium text-xs sm:text-sm xl:text-sm 2xl:text-base px-4 sm:px-6 xl:px-6 2xl:px-8 py-2 sm:py-3 xl:py-3 2xl:py-4 rounded-lg hover:bg-gray-800 transition-colors duration-200"
               >
                 Contact Support
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
 
@@ -87,7 +88,7 @@ const FAQ = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-4"
+            className="space-y-3 sm:space-y-4"
           >
             {faqs.map((faq, index) => (
               <motion.div
@@ -99,15 +100,15 @@ const FAQ = () => {
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                  className="w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
                 >
-                  <span className="font-semibold text-gray-900 pr-4">
+                  <span className="font-semibold text-gray-900 pr-2 sm:pr-4 text-sm sm:text-base xl:text-base 2xl:text-lg">
                     {faq.question}
                   </span>
                   {openIndex === index ? (
-                    <ChevronUp size={20} className="text-gray-500 flex-shrink-0" />
+                    <ChevronUp size={16} className="text-gray-500 flex-shrink-0 sm:w-5 sm:h-5 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6" />
                   ) : (
-                    <ChevronDown size={20} className="text-gray-500 flex-shrink-0" />
+                    <ChevronDown size={16} className="text-gray-500 flex-shrink-0 sm:w-5 sm:h-5 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6" />
                   )}
                 </button>
                 
@@ -123,8 +124,8 @@ const FAQ = () => {
                   }}
                   className="overflow-hidden"
                 >
-                  <div className="px-6 pb-4">
-                    <p className="text-gray-600 leading-relaxed">
+                  <div className="px-4 sm:px-6 xl:px-6 2xl:px-8 pb-3 sm:pb-4 xl:pb-4 2xl:pb-6">
+                    <p className="text-gray-600 leading-relaxed text-sm sm:text-base xl:text-base 2xl:text-lg">
                       {faq.answer}
                     </p>
                   </div>

@@ -214,13 +214,6 @@ const BlogPage = () => {
                       {featuredArticle.date}
                     </span>
                   </div>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {featuredArticle.tags.map((tag) => (
-                      <span key={tag} className="px-3 py-1 bg-white text-gray-700 text-sm rounded-full border border-gray-200">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
                   <button
                     className="bg-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors duration-200 flex items-center gap-2"
                     onClick={() => {

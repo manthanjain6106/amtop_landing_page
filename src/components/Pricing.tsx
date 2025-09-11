@@ -96,13 +96,13 @@ const Pricing = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 sm:mb-16 md:mb-20"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight mb-4 sm:mb-6 px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 tracking-tight mb-4 sm:mb-6 px-4">
             Choose the plan that{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-600 to-gray-800">
               fits your needs
             </span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-base sm:text-lg md:text-xl xl:text-xl 2xl:text-2xl text-gray-600 max-w-2xl sm:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl mx-auto leading-relaxed px-4">
             All plans are now completely FREE. Start building with enterprise-grade features at zero cost.
           </p>
         </motion.div>
@@ -138,21 +138,21 @@ const Pricing = () => {
               }`}>
                 {/* Plan Header */}
                 <div className="text-center mb-6 sm:mb-8">
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-xl sm:text-2xl xl:text-2xl 2xl:text-3xl font-bold text-gray-900 mb-2">
                     {plan.name}
                   </h3>
                   <div className="mb-3 sm:mb-4">
                     {/* Crossed out original price */}
-                    <div className="text-lg sm:text-2xl text-gray-400 line-through mb-1 sm:mb-2">
+                    <div className="text-lg sm:text-2xl xl:text-2xl 2xl:text-3xl text-gray-400 line-through mb-1 sm:mb-2">
                       {plan.originalPrice}
                     </div>
                     {/* New FREE price */}
-                    <div className="text-3xl sm:text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-600">
+                    <div className="text-3xl sm:text-4xl md:text-5xl xl:text-5xl 2xl:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-600">
                       {plan.price}
                     </div>
                                          
                   </div>
-                  <p className="text-gray-600 text-xs sm:text-sm">
+                  <p className="text-gray-600 text-xs sm:text-sm xl:text-sm 2xl:text-base">
                     {plan.description}
                   </p>
                 </div>
@@ -161,10 +161,10 @@ const Pricing = () => {
                 <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                   {plan.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-start gap-2 sm:gap-3">
-                      <div className="w-4 h-4 sm:w-5 sm:h-5 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check size={12} className="text-gray-600 sm:w-3.5 sm:h-3.5" />
+                      <div className="w-4 h-4 sm:w-5 sm:h-5 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Check size={12} className="text-gray-600 sm:w-3.5 sm:h-3.5 xl:w-4 xl:h-4 2xl:w-5 2xl:h-5" />
                       </div>
-                      <span className="text-gray-700 text-xs sm:text-sm">
+                      <span className="text-gray-700 text-xs sm:text-sm xl:text-sm 2xl:text-base">
                         {feature}
                       </span>
                     </div>
@@ -173,18 +173,21 @@ const Pricing = () => {
 
                 {/* CTA Button */}
                 <div className="mt-auto">
-                  <motion.button
+                  <motion.a
+                    href="https://app.amtop.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`w-full py-3 sm:py-4 px-4 sm:px-6 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center gap-2 text-sm sm:text-base ${
+                    className={`w-full py-3 sm:py-4 xl:py-4 2xl:py-5 px-4 sm:px-6 xl:px-6 2xl:px-8 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center gap-2 text-sm sm:text-base xl:text-base 2xl:text-lg ${
                       plan.buttonVariant === 'primary'
                         ? 'bg-gradient-to-r from-black to-gray-600 hover:from-gray-800 hover:to-black text-white shadow-lg hover:shadow-xl'
                         : 'bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md'
                     }`}
                   >
                     {plan.buttonText}
-                    <ArrowRight size={14} className="sm:w-4 sm:h-4" />
-                  </motion.button>
+                    <ArrowRight size={14} className="sm:w-4 sm:h-4 xl:w-4 xl:h-4 2xl:w-5 2xl:h-5" />
+                  </motion.a>
                 </div>
               </div>
             </motion.div>

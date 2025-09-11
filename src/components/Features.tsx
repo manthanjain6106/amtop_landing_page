@@ -179,14 +179,17 @@ const Features = () => {
             <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto">
               Each feature is designed to work seamlessly together, creating a powerful platform for intelligent workflow automation.
             </p>
-            <motion.button
+            <motion.a
+              href="https://app.amtop.in/"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-200 flex items-center gap-2 mx-auto text-sm sm:text-base"
             >
               Start Free Trial
               <ArrowRight size={16} className="sm:w-5 sm:h-5" />
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
       </div>

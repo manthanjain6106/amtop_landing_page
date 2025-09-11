@@ -64,11 +64,6 @@ const CommunityPage = () => {
                 Join Discord Server
                 <ExternalLink size={16} />
               </a>
-              <button
-                className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors duration-200"
-              >
-                Learn More
-              </button>
             </div>
           </div>
         </div>
@@ -194,11 +189,6 @@ const CommunityPage = () => {
                 Join Discord Now
                 <ExternalLink size={16} />
               </a>
-              <button
-                className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-all duration-200"
-              >
-                Learn More About amTop
-              </button>
             </div>
           </div>
         </div>

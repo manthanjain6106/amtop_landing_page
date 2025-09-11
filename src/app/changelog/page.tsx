@@ -120,27 +120,6 @@ const ChangelogPage = () => {
               Stay up to date with the latest features, improvements, and fixes 
               in the amTop platform. We&apos;re constantly evolving to serve you better.
             </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-wrap justify-center gap-4"
-            >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-black text-white font-semibold py-4 px-8 rounded-xl hover:bg-gray-800 transition-colors duration-200"
-              >
-                Subscribe to Updates
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border border-black text-black font-semibold py-4 px-8 rounded-xl hover:bg-black hover:text-white transition-all duration-200"
-              >
-                View Roadmap
-              </motion.button>
-            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -313,41 +292,6 @@ const ChangelogPage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-black">
-        <div className="container-max">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Ready to Experience the Latest Features?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Update to the latest version and unlock all the new capabilities.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-black font-semibold py-4 px-8 rounded-xl hover:bg-gray-100 transition-colors duration-200"
-              >
-                Update Now
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border border-white text-white font-semibold py-4 px-8 rounded-xl hover:bg-white hover:text-black transition-all duration-200"
-              >
-                View Release Notes
-              </motion.button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       <Footer />
     </div>

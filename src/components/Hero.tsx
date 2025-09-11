@@ -55,7 +55,7 @@ const Hero = () => {
   return (
     <section 
       ref={containerRef}
-      className="section-padding-top section-padding-bottom px-4 sm:px-6 lg:px-8 xl:px-12 bg-white relative overflow-hidden min-h-screen flex items-center"
+      className="section-padding-top section-padding-bottom px-4 sm:px-6 lg:px-8 xl:px-12 bg-white relative overflow-hidden min-h-screen flex items-center pt-24 sm:pt-20 lg:pt-24 xl:pt-28 2xl:pt-32"
     >
       {/* Subtle overlay for better text readability */}
       <div className="absolute inset-0 bg-white/20 backdrop-blur-[0.5px]"></div>
@@ -74,8 +74,7 @@ const Hero = () => {
           >
             <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-blue-500 rounded-full animate-pulse"></div>
             <span className="font-semibold">
-              <span className="hidden sm:inline">Trusted by fast-moving founders and marketers worldwide</span>
-              <span className="sm:hidden">Trusted by engineering teams</span>
+              Trusted by fast-moving founders and marketers worldwide
             </span>
             <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-purple-500 rounded-full animate-pulse" style={{ animationDelay: "0.5s" }}></div>
           </motion.div>
@@ -83,7 +82,7 @@ const Hero = () => {
           {/* Enhanced Main Headline with 3D effect */}
           <motion.h1
             variants={itemVariants}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 tracking-tight leading-tight mb-8 sm:mb-10"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl 2xl:text-7xl font-bold text-gray-900 tracking-tight leading-tight mb-8 sm:mb-10"
             style={{ textShadow: "0 4px 8px rgba(0,0,0,0.1)" }}
           >
             <span className="text-gray-900">Agentic Marketing Intelligence</span>
@@ -108,7 +107,7 @@ const Hero = () => {
           {/* Enhanced Sub-headline */}
           <motion.p
             variants={itemVariants}
-            className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-5xl sm:max-w-6xl mx-auto mb-10 sm:mb-14 px-4 font-medium"
+            className="text-lg sm:text-xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-gray-600 leading-relaxed max-w-5xl sm:max-w-6xl xl:max-w-7xl mx-auto mb-10 sm:mb-14 px-4 font-medium"
           >
             While you&apos;re busy wasting hours on reports, your
             competitors are moving faster. Get all your insights and ads in
@@ -121,20 +120,25 @@ const Hero = () => {
             variants={itemVariants}
             className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16 sm:mb-20 px-4"
           >
-            <motion.button
+            <motion.a
+              href="https://app.amtop.in/"
+              target="_blank"
+              rel="noopener noreferrer"
               {...buttonVariants}
-              className="bg-gradient-to-r from-black via-gray-800 to-black text-white font-bold py-5 sm:py-6 md:py-7 px-10 sm:px-12 md:px-16 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 text-lg sm:text-xl flex items-center gap-3 justify-center group relative overflow-hidden hover:bg-black"
+              className="bg-gradient-to-r from-black via-gray-800 to-black text-white font-bold py-5 sm:py-6 md:py-7 xl:py-6 2xl:py-7 px-10 sm:px-12 md:px-16 xl:px-14 2xl:px-16 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 text-lg sm:text-xl xl:text-lg 2xl:text-xl flex items-center gap-3 justify-center group relative overflow-hidden hover:bg-black"
             >
               <span className="relative z-10">Start Free</span>
-              <ArrowRight size={22} className="sm:w-7 sm:h-7 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
-            </motion.button>
-            
-            <motion.button
-              variants={buttonVariants}
-              className="border-2 border-gray-300 text-gray-700 font-semibold py-5 sm:py-6 md:py-7 px-10 sm:px-12 md:px-16 rounded-2xl hover:border-blue-300 hover:text-blue-700 transition-all duration-300 text-lg sm:text-xl backdrop-blur-sm bg-white/50"
+              <ArrowRight size={22} className="sm:w-7 sm:h-7 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
+            </motion.a>
+            <motion.a
+              href="https://cal.com/amtop-amarnath/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              {...buttonVariants}
+              className="border-2 border-gray-300 text-gray-700 font-bold py-5 sm:py-6 md:py-7 xl:py-6 2xl:py-7 px-10 sm:px-12 md:px-16 xl:px-14 2xl:px-16 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg sm:text-xl xl:text-lg 2xl:text-xl flex items-center gap-3 justify-center group relative overflow-hidden hover:bg-gray-50 hover:border-gray-400"
             >
-              Watch demo
-            </motion.button>
+              <span className="relative z-10">Schedule Demo</span>
+            </motion.a>
           </motion.div>
 
           {/* Enhanced Analytics GIF with 3D effect */}

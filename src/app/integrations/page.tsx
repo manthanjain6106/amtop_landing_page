@@ -77,27 +77,6 @@ const IntegrationsPage = () => {
               Connect amTop with your favorite tools and services. Automate workflows, 
               sync data, and create powerful integrations that work seamlessly together.
             </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-wrap justify-center gap-4"
-            >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-black text-white font-semibold py-4 px-8 rounded-xl hover:bg-gray-800 transition-colors duration-200"
-              >
-                View All Integrations
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border border-black text-black font-semibold py-4 px-8 rounded-xl hover:bg-black hover:text-white transition-all duration-200"
-              >
-                Request Integration
-              </motion.button>
-            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -143,7 +122,7 @@ const IntegrationsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-blue-600">
         <div className="container-max">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -159,20 +138,16 @@ const IntegrationsPage = () => {
               Start building powerful integrations today and automate your entire workflow.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
+              <motion.a
+                href="https://app.amtop.in/"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-black font-semibold py-4 px-8 rounded-xl hover:bg-gray-100 transition-colors duration-200"
               >
                 Get Started Free
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border border-white text-white font-semibold py-4 px-8 rounded-xl hover:bg-white hover:text-black transition-all duration-200"
-              >
-                View Documentation
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
         </div>

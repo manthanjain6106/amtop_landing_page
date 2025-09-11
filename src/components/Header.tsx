@@ -117,7 +117,10 @@ const Header = () => {
 
             {/* Desktop CTA Button */}
             <div className="hidden lg:flex items-center">
-              <motion.button
+              <motion.a
+                href="https://app.amtop.in/"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.02, y: -1 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.2 }}
@@ -125,7 +128,7 @@ const Header = () => {
               >
                 Start Free
                 <ArrowRight size={16} />
-              </motion.button>
+              </motion.a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -164,7 +167,10 @@ const Header = () => {
                     </motion.a>
                   ))}
                   <div className="px-4 pt-4 border-t border-gray-200">
-                    <motion.button
+                    <motion.a
+                      href="https://app.amtop.in/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.01 }}
                       whileTap={{ scale: 0.99 }}
                       transition={{ duration: 0.2 }}
@@ -173,7 +179,7 @@ const Header = () => {
                     >
                       Start Free
                       <ArrowRight size={18} />
-                    </motion.button>
+                    </motion.a>
                   </div>
                 </div>
               </motion.div>

@@ -244,11 +244,12 @@ const HelpPage = () => {
               Our team is ready to help you get the most out of amTop. Reach out and we&apos;ll get back to you quickly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
+              <a
+                href="/contact"
                 className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-200"
               >
                 Contact Support
-              </button>
+              </a>
               <button
                 className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-all duration-200"
               >

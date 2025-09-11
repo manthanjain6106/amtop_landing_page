@@ -116,7 +116,7 @@ const ScrollContainer = () => {
       <div className="container-max">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start min-h-screen">
           {/* Left Content - Changes based on scroll */}
-          <div className="sticky top-24 h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8">
+          <div className="sticky top-20 sm:top-24 h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8">
             <motion.div
               key={currentSection}
               initial={{ opacity: 0, y: 20 }}
@@ -128,21 +128,21 @@ const ScrollContainer = () => {
                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
                   <currentSectionData.icon size={24} className="sm:w-8 sm:h-8 text-white" />
                 </div>
-                                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-4">
-                    {currentSectionData.title}
-                  </h2>
-                  <p className="text-base sm:text-lg text-gray-600 mb-6">
-                    {currentSectionData.subtitle}
-                  </p>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-8">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl font-bold text-black mb-4">
+                  {currentSectionData.title}
+                </h2>
+                <p className="text-sm sm:text-base md:text-lg xl:text-lg 2xl:text-xl text-gray-600 mb-6">
+                  {currentSectionData.subtitle}
+                </p>
+                <p className="text-xs sm:text-sm md:text-base xl:text-base 2xl:text-lg text-gray-700 leading-relaxed mb-8">
                   {currentSectionData.description}
                 </p>
                 
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {currentSectionData.features.map((feature, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-black rounded-full"></div>
-                      <span className="text-sm font-medium text-gray-800">{feature}</span>
+                    <div key={index} className="flex items-center gap-2 sm:gap-3">
+                      <div className="w-2 h-2 bg-black rounded-full flex-shrink-0"></div>
+                      <span className="text-xs sm:text-sm xl:text-sm 2xl:text-base font-medium text-gray-800">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -178,9 +178,9 @@ const ScrollContainer = () => {
       </div>
 
       {/* Mobile-Friendly Alternative */}
-      <div className="lg:hidden bg-gray-50 py-16">
-        <div className="container-max">
-          <div className="space-y-12">
+      <div className="lg:hidden bg-gray-50 py-12 sm:py-16">
+        <div className="container-max px-4">
+          <div className="space-y-8 sm:space-y-12">
             {sections.map((section, index) => (
               <motion.div
                 key={section.id}
@@ -188,27 +188,27 @@ const ScrollContainer = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg"
+                className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg"
               >
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
-                    <section.icon size={24} className="text-white" />
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                    <section.icon size={20} className="sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-black mb-4">
+                  <h3 className="text-xl sm:text-2xl font-bold text-black mb-3 sm:mb-4">
                     {section.title}
                   </h3>
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
                     {section.subtitle}
                   </p>
-                  <p className="text-gray-700 leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-gray-700 leading-relaxed mb-4 sm:mb-6">
                     {section.description}
                   </p>
                   
-                  <div className="space-y-3">
+                  <div className="space-y-2 sm:space-y-3">
                     {section.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center justify-center gap-3">
-                        <div className="w-2 h-2 bg-black rounded-full"></div>
-                        <span className="text-sm font-medium text-gray-800">{feature}</span>
+                      <div key={featureIndex} className="flex items-center justify-center gap-2 sm:gap-3">
+                        <div className="w-2 h-2 bg-black rounded-full flex-shrink-0"></div>
+                        <span className="text-xs sm:text-sm font-medium text-gray-800">{feature}</span>
                       </div>
                     ))}
                   </div>

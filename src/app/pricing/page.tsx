@@ -194,7 +194,10 @@ export default function PricingPage() {
 
                   {/* CTA Button */}
                   <div className="mt-auto">
-                    <motion.button
+                    <motion.a
+                      href="https://app.amtop.in/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       className={`w-full py-3 sm:py-4 px-4 sm:px-6 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center gap-2 text-sm sm:text-base ${
@@ -205,7 +208,7 @@ export default function PricingPage() {
                     >
                       {plan.buttonText}
                       <ArrowRight size={14} className="sm:w-4 sm:h-4" />
-                    </motion.button>
+                    </motion.a>
                   </div>
                 </div>
               </motion.div>
@@ -229,13 +232,16 @@ export default function PricingPage() {
               Join thousands of teams already using amTop. All plans are completely FREE.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <motion.button
+              <motion.a
+                href="https://app.amtop.in/"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
               >
                 Get Started Free
-              </motion.button>
+              </motion.a>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

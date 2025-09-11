@@ -247,16 +247,6 @@ const BlogPostPage = () => {
                 </button>
               </div>
 
-              {/* Tags */}
-              {post.tags && post.tags.length > 0 && (
-                <div className="flex flex-wrap gap-2">
-                  {post.tags.map((tag) => (
-                    <span key={tag} className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
             </motion.div>
           </div>
         </section>
@@ -288,7 +278,7 @@ const BlogPostPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="max-w-4xl mx-auto prose prose-lg prose-gray max-w-none"
+              className="max-w-4xl mx-auto prose prose-lg prose-gray"
             >
               {/* Render the content based on the content structure */}
               {post.content && post.content.root && post.content.root.children ? (
@@ -312,7 +302,8 @@ const BlogPostPage = () => {
                       );
                     }
                     if (child.type === 'heading') {
-                      const HeadingTag = `h${child.depth}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+                      const depth = child.depth || 2; // Default to h2 if depth is undefined
+                      const HeadingTag = `h${Math.min(Math.max(depth, 1), 6)}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
                       return (
                         <HeadingTag key={index} className="text-2xl font-bold text-gray-900 mt-8 mb-4">
                           {child.children && child.children.map((textChild, textIndex) => (

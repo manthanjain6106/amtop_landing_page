@@ -94,20 +94,16 @@ export default function FeaturesPage() {
               faster.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <motion.button
+              <motion.a
+                href="https://app.amtop.in/"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
               >
                 Start Free Trial
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
-              >
-                View Demo
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
         </div>
@@ -263,20 +259,26 @@ export default function FeaturesPage() {
               turn marketing chaos into clear growth.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <motion.button
+              <motion.a
+                href="https://app.amtop.in/"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
               >
                 Get Started Free
-              </motion.button>
-              <motion.button
+              </motion.a>
+              <motion.a
+                href="https://cal.com/amtop-amarnath/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="border border-blue-400 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
               >
                 Schedule Demo
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
         </div>
