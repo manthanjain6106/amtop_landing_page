@@ -58,7 +58,7 @@ const CommunityPage = () => {
                 href="https://discord.gg/VYyBafcB"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center gap-2"
+                className="bg-black text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center gap-2"
               >
                 <MessageSquare size={20} />
                 Join Discord Server
@@ -90,8 +90,8 @@ const CommunityPage = () => {
                 className="bg-white border border-gray-200 p-6 rounded-xl hover:border-blue-300 transition-colors duration-300"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-blue-100 rounded-lg">
-                    <feature.icon size={20} className="text-blue-600" />
+                  <div className="p-2 bg-gray-100 rounded-lg">
+                    <feature.icon size={20} className="text-black" />
                   </div>
                   <span className={`px-3 py-1 text-sm font-medium rounded-full ${
                     feature.status === 'Coming Soon' ? 'bg-green-100 text-green-800' :
@@ -126,8 +126,8 @@ const CommunityPage = () => {
 
           <div className="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-sm">
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-6">
-                <MessageSquare size={32} className="text-blue-600" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-100 rounded-full mb-6">
+                <MessageSquare size={32} className="text-black" />
               </div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">amTop Discord Community</h3>
               <p className="text-gray-600 mb-6">
@@ -156,7 +156,7 @@ const CommunityPage = () => {
                 href="https://discord.gg/VYyBafcB"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors duration-200 text-lg"
+                className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 transition-colors duration-200 text-lg"
               >
                 <MessageSquare size={24} />
                 Join Discord Server
@@ -168,13 +168,13 @@ const CommunityPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600">
+      <section className="py-20 bg-black">
         <div className="container-max">
           <div className="text-center text-white">
             <h2 className="text-4xl font-bold mb-6">
               Ready to Be Part of Our Journey?
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Join our Discord server and be part of building the future of Agentic Marketing Intelligence. 
               Your feedback shapes our product!
             </p>
@@ -183,7 +183,7 @@ const CommunityPage = () => {
                 href="https://discord.gg/VYyBafcB"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center gap-2"
+                className="bg-white text-black px-8 py-4 rounded-xl font-semibold hover:bg-gray-200 transition-colors duration-200 flex items-center justify-center gap-2"
               >
                 <MessageSquare size={20} />
                 Join Discord Now

@@ -218,7 +218,7 @@ export default function PricingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding px-4 bg-blue-600">
+      <section className="section-padding px-4 bg-black">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -228,7 +228,7 @@ export default function PricingPage() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Get Started?
             </h2>
-            <p className="text-lg sm:text-xl text-blue-100 mb-8">
+            <p className="text-lg sm:text-xl text-gray-300 mb-8">
               Join thousands of teams already using amTop. All plans are completely FREE.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -238,14 +238,14 @@ export default function PricingPage() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
+                className="bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
               >
                 Get Started Free
               </motion.a>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border border-blue-400 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                className="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition-colors"
               >
                 Contact Sales
               </motion.button>

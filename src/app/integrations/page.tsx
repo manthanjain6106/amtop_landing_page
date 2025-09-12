@@ -24,21 +24,21 @@ const IntegrationsPage = () => {
           icon: Database, 
           description: 'Track website performance and user behavior',
           details: 'Advanced analytics, real-time data monitoring, conversion tracking, audience insights, and comprehensive reporting for data-driven decision making',
-          color: 'bg-green-500' 
+          color: 'bg-gray-100' 
         },
         { 
           name: 'Meta Ads', 
           icon: MessageSquare, 
           description: 'Manage Facebook and Instagram advertising campaigns',
           details: 'Automated bidding, audience targeting, creative optimization, performance tracking, and cross-platform campaign management',
-          color: 'bg-blue-500' 
+          color: 'bg-gray-100' 
         },
         { 
           name: 'Ads Agent', 
           icon: Users, 
           description: 'AI-powered advertising optimization and management',
           details: 'Intelligent budget allocation, automated A/B testing, performance prediction, and real-time campaign adjustments for maximum ROI',
-          color: 'bg-purple-500' 
+          color: 'bg-gray-100' 
         }
       ]
     }
@@ -110,7 +110,7 @@ const IntegrationsPage = () => {
                 className="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border border-gray-100"
               >
                 <div className={`w-16 h-16 ${integration.color} rounded-xl flex items-center justify-center mb-6`}>
-                  <integration.icon className="text-white" size={32} />
+                  <integration.icon className="text-black" size={32} />
                 </div>
                 <h4 className="text-2xl font-semibold text-gray-900 mb-4">{integration.name}</h4>
                 <p className="text-gray-600 text-base leading-relaxed mb-4">{integration.description}</p>
@@ -122,7 +122,7 @@ const IntegrationsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-blue-600">
+      <section className="py-20 bg-black">
         <div className="container-max">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -144,7 +144,7 @@ const IntegrationsPage = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-black font-semibold py-4 px-8 rounded-xl hover:bg-gray-100 transition-colors duration-200"
+                className="bg-white text-black font-semibold py-4 px-8 rounded-xl hover:bg-gray-200 transition-colors duration-200"
               >
                 Get Started Free
               </motion.a>

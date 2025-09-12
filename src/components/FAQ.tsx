@@ -68,7 +68,7 @@ const FAQ = () => {
               <h3 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base xl:text-base 2xl:text-lg">
                 Still have questions?
               </h3>
-              <p className="text-gray-600 text-xs sm:text-sm xl:text-sm 2xl:text-base mb-3 sm:mb-4">
+              <p className="text-gray-600 text-xs sm:text-sm xl:text-sm 2xl:text-base mb-6 sm:mb-8">
                 Our team is here to help you get the most out of our platform.
               </p>
               <motion.a

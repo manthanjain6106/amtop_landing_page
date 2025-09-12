@@ -407,7 +407,7 @@ const ContactPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-blue-600">
+      <section className="section-padding bg-black">
         <div className="container-max">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -419,7 +419,7 @@ const ContactPage = () => {
             <h2 className="text-4xl font-bold text-white mb-6">
               Ready to Get Started?
             </h2>
-            <p className="text-xl text-white mb-8">
+            <p className="text-xl text-gray-300 mb-8">
               Contact us today to learn how amTop can transform your business with AI automation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -429,7 +429,7 @@ const ContactPage = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-black font-semibold py-4 px-8 rounded-xl hover:bg-gray-100 transition-colors duration-200"
+                className="bg-white text-black font-semibold py-4 px-8 rounded-xl hover:bg-gray-200 transition-colors duration-200"
               >
                 Schedule Demo
               </motion.a>

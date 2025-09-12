@@ -255,7 +255,7 @@ const ChangelogPage = () => {
       </section>
 
       {/* Subscribe Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-black">
         <div className="container-max">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -264,10 +264,10 @@ const ChangelogPage = () => {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl font-bold text-white mb-6">
               Never Miss an Update
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-300 mb-8">
               Subscribe to our newsletter and be the first to know about new features, 
               improvements, and platform updates.
             </p>
@@ -275,17 +275,17 @@ const ChangelogPage = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+                className="flex-1 px-4 py-3 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-white bg-white text-gray-900 placeholder-gray-500"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-black text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors duration-200"
+                className="bg-white text-black font-semibold py-3 px-6 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
                 Subscribe
               </motion.button>
             </div>
-            <p className="text-sm text-gray-500 mt-4">
+            <p className="text-sm text-gray-400 mt-4">
               We respect your privacy. Unsubscribe at any time.
             </p>
           </motion.div>

@@ -391,13 +391,13 @@ const BlogPage = () => {
       )}
 
       {/* Newsletter Signup */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600">
+      <section className="py-20 bg-black">
         <div className="container-max">
           <div className="text-center text-white max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold mb-6">
               {newsletterSignup.title}
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-gray-300 mb-8">
               {newsletterSignup.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
@@ -407,7 +407,7 @@ const BlogPage = () => {
                 className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
               />
               <button
-                className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+                className="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200"
               >
                 Subscribe
               </button>
