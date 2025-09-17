@@ -5,19 +5,9 @@ import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
-  Users, 
-  Target, 
-  Award, 
-  Globe, 
-  Zap, 
-  Shield,
-  Heart,
-  Lightbulb,
-  TrendingUp,
   Clock,
   Mail,
   Phone,
-  MapPin,
   Send,
   CheckCircle
 } from 'lucide-react';

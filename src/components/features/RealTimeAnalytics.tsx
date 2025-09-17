@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { BarChart3, TrendingUp, Activity, PieChart, ArrowRight, Eye } from 'lucide-react';
+import { BarChart3, TrendingUp, Activity, PieChart, ArrowRight } from 'lucide-react';
 
 const RealTimeAnalytics = () => {
   const ref = useRef(null);
@@ -12,7 +12,6 @@ const RealTimeAnalytics = () => {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
 
   return (
     <section id="real-time-analytics" ref={ref} className="relative min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 overflow-hidden">

@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Download, Mail, Phone, MapPin, Calendar, User, FileText, Image, Video, Globe, Award, TrendingUp, Users, Building, Zap, Shield, BarChart3, ArrowRight, ExternalLink, Play, Camera, FileImage, FileVideo, FileType } from 'lucide-react';
+import { Download, Mail, Phone, MapPin, Calendar, User, FileText, Image, Video, ExternalLink, Camera, FileType, ArrowRight } from 'lucide-react';
 
 export default function PressPage() {
   const [ref, inView] = useInView({

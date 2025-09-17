@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Image from 'next/image';
 import { 
   Target, 
   Shield,
@@ -80,19 +81,19 @@ const AboutPage = () => {
 
   const milestones = [
     {
-      year: '2024',
-      title: 'Company Founded',
-      description: 'amTop was founded with a vision to democratize AI and make intelligent automation accessible to businesses of all sizes.'
-    },
-    {
-      year: '2024',
-      title: 'Platform Development',
-      description: 'Developed our core AI automation platform with focus on Google Analytics, Meta Ads, and intelligent advertising optimization.'
+      year: '2025',
+      title: 'The Beginning',
+      description: 'In February 2025, amTop started as a simple idea from Amarnath. He reached out to Anant, and together they began building what would soon become a game-changing SaaS platform.'
     },
     {
       year: '2025',
-      title: 'Platform Launch',
-      description: 'Successfully launched amTop platform with core integrations and AI-powered automation capabilities.'
+      title: 'MVP Launch',
+      description: 'By September 2025, we launched our first MVP — the early version of amTop\'s Agentic AI-powered platform. It was built to save founders and marketers from drowning in repetitive work.'
+    },
+    {
+      year: 'Future',
+      title: 'The Road Ahead',
+      description: 'From here, our focus is crystal clear: make amTop so advanced that using it boosts your ROI by at least 10% every month. We\'re just getting started, and the journey ahead is all about scaling growth — for us, and for you.'
     }
   ];
 
@@ -257,9 +258,11 @@ const AboutPage = () => {
               >
                 <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden mx-auto mb-4 sm:mb-6">
                   {member.hasImage && member.image ? (
-                    <img
+                    <Image
                       src={member.image}
                       alt={member.name}
+                      width={160}
+                      height={160}
                       className={`w-full h-full object-cover ${member.name === 'Anant Dubey' ? 'scale-110 object-top' : ''} ${member.name === 'Manthan Jain' ? 'object-top' : ''} ${member.name === 'Amarnath Pandey' ? 'object-top' : ''}`}
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;

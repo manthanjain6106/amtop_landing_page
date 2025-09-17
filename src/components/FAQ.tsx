@@ -15,28 +15,20 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "What are AI agents and how do they work?",
-      answer: "AI agents are intelligent software programs that can autonomously perform tasks, make decisions, and learn from experience. They work by analyzing data, following predefined rules, and using machine learning to improve their performance over time. Our platform makes it easy to create and deploy these agents without any coding knowledge."
+      question: "What makes Amtop different from other marketing tools?",
+      answer: "Amtop isn't just another dashboard that throws data at you. It's powered by Agentic AI, which doesn't just show you numbers — it connects the dots, surfaces opportunities, and even runs smarter ad campaigns that optimize themselves. While other tools keep you busy, Amtop cuts through the grind so you can focus on scaling."
     },
     {
-      question: "How secure is the platform?",
-      answer: "Security is our top priority. We use enterprise-grade encryption, SOC 2 compliance, and follow industry best practices. All data is encrypted in transit and at rest, and we provide role-based access controls, audit logs, and secure API endpoints. We also offer SSO integration for enterprise customers."
+      question: "Who is Amtop built for?",
+      answer: "If you're a founder, marketer, or growing business that's tired of juggling tools, wasting hours on reports, or running ads that don't perform, Amtop is for you. Think of it as your always-on marketing command center, powered by AI that actually works for you."
     },
     {
-      question: "Can I integrate with my existing tools?",
-      answer: "Yes! We offer 100+ pre-built integrations with popular tools like Slack, Zapier, Salesforce, HubSpot, and many more. You can also create custom integrations using our API. Our platform is designed to work seamlessly with your existing tech stack."
+      question: "Do I need to be \"techy\" to use Amtop?",
+      answer: "Not at all. We built Amtop to be simple, clean, and easy to use — no bloated menus or confusing dashboards. If you can check your email, you can use Amtop. And if you ever need help, our 24/7 AI + human support has your back."
     },
     {
-      question: "What kind of support do you provide?",
-      answer: "We offer comprehensive support including documentation, video tutorials, community forums, and direct support channels. Pro users get priority support, and Enterprise customers receive dedicated account management and 24/7 phone support. We also provide custom training sessions for enterprise teams."
-    },
-    {
-      question: "How long does it take to get started?",
-      answer: "You can get started in minutes! Our platform is designed for instant deployment. Simply choose a template, configure your preferences, and launch your first AI agent. Most users see results within the first day, and our team is available to help with any setup questions."
-    },
-    {
-      question: "Can I customize the AI agents for my specific needs?",
-      answer: "Absolutely! While we provide pre-built templates for common use cases, our platform is highly customizable. You can modify agent behavior, create custom workflows, integrate with your data sources, and even train agents on your specific domain knowledge. Enterprise customers can work with our team to build completely custom solutions."
+      question: "Is my data safe with Amtop?",
+      answer: "Yes — your data is 100% safe with us. Amtop uses enterprise-grade security, the same level trusted by leading global platforms, to protect every piece of information you connect. All data transfers are fully encrypted, your reports are stored securely, and we never sell or share your information — ever. On top of that, our systems refresh in real time, so you're not only safe but also always up to date. In short: you stay in control, your data stays private, and we handle the heavy lifting in the background."
     }
   ];
 

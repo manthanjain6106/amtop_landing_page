@@ -4,13 +4,21 @@ import { PAYLOAD_CONFIG } from '@/config/payload';
 interface PayloadCategory {
   id: string;
   title: string;
+  slug: string;
   description?: string;
-  postCount?: number;
+}
+
+interface TransformedCategory {
+  id: string;
+  title: string;
+  description: string;
+  postCount: number;
 }
 
 export async function GET() {
   try {
-    const response = await fetch(`${PAYLOAD_CONFIG.API_URL}/categories?sort=title`, {
+    // Fetch categories from Payload CMS
+    const response = await fetch(`${PAYLOAD_CONFIG.API_URL}/categories?sort=title&limit=100`, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -22,16 +30,17 @@ export async function GET() {
 
     const data = await response.json();
     
-    const categories = data.docs?.map((category: PayloadCategory) => ({
+    // Transform the data to match your blog page structure
+    const transformedCategories: TransformedCategory[] = data.docs?.map((category: PayloadCategory) => ({
       id: category.id,
-      title: category.title,
-      description: category.description || '',
-      postCount: category.postCount || 0
+      title: category.title || 'Uncategorized',
+      description: category.description || `Posts in ${category.title}`,
+      postCount: 0, // We'll calculate this separately if needed
     })) || [];
 
     return NextResponse.json({
       success: true,
-      categories
+      categories: transformedCategories,
     });
 
   } catch (error) {

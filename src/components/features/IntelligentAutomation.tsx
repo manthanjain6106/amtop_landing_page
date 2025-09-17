@@ -12,7 +12,6 @@ const IntelligentAutomation = () => {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
 
   return (
     <section id="intelligent-automation" ref={ref} className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden">

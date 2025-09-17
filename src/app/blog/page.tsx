@@ -7,6 +7,7 @@ import { Search, Calendar, User, Clock, ArrowRight, BookOpen, Loader2 } from 'lu
 import { useBlogData } from '@/utils/useBlogData';
 import SEO from '@/components/SEO';
 import Breadcrumb from '@/components/Breadcrumb';
+import Image from 'next/image';
 
 const BlogPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -228,9 +229,11 @@ const BlogPage = () => {
                 </div>
                 <div className="bg-gray-200 rounded-2xl h-64 lg:h-96 flex items-center justify-center">
                   {featuredArticle.image && featuredArticle.image !== '/images/blog-placeholder.jpg' ? (
-                    <img 
+                    <Image 
                       src={featuredArticle.image} 
                       alt={featuredArticle.title}
+                      width={400}
+                      height={256}
                       className="w-full h-full object-cover rounded-2xl"
                     />
                   ) : (
@@ -274,9 +277,11 @@ const BlogPage = () => {
                 >
                   <div className="bg-gray-200 h-48 flex items-center justify-center">
                     {article.image && article.image !== '/images/blog-placeholder.jpg' ? (
-                      <img 
+                      <Image 
                         src={article.image} 
                         alt={article.title}
+                        width={400}
+                        height={192}
                         className="w-full h-full object-cover"
                       />
                     ) : (

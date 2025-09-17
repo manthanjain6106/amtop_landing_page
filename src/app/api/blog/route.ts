@@ -6,11 +6,12 @@ interface PayloadPost {
   title: string;
   excerpt: string;
   slug: string;
-  author?: {
-    name: string;
-  };
-  publishedAt?: string;
   readTime?: string;
+  authors?: Array<{
+    id: string;
+    name: string;
+  }>;
+  publishedAt?: string;
   categories?: Array<{
     title: string;
   }>;
@@ -19,7 +20,7 @@ interface PayloadPost {
   };
   tags?: Array<{
     title: string;
-  } | string>;
+  }>;
   content: unknown;
   status: string;
   updatedAt: string;
@@ -44,8 +45,8 @@ interface TransformedPost {
 
 export async function GET() {
   try {
-    // Fetch posts from Payload CMS
-    const response = await fetch(`${PAYLOAD_CONFIG.API_URL}/posts?where[status][equals]=published&sort=-publishedAt&limit=10`, {
+    // Fetch posts from Payload CMS with populated relationships
+    const response = await fetch(`${PAYLOAD_CONFIG.API_URL}/posts?where[status][equals]=published&sort=-publishedAt&limit=10&populate=authors,categories,tags,coverImage`, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -74,9 +75,17 @@ export async function GET() {
           if (post.coverImage.url.startsWith('http')) {
             imageUrl = post.coverImage.url;
           } else {
-            // If it's a relative URL, construct the full URL
-            const baseUrl = PAYLOAD_CONFIG.API_URL.replace('/api', '');
-            imageUrl = `${baseUrl}${post.coverImage.url}`;
+            // For Google Cloud Storage, construct the proper URL
+            // Check if it's a GCS URL pattern
+            if (post.coverImage.url.includes('media/') || post.coverImage.url.startsWith('/media/')) {
+              // This is likely a Google Cloud Storage URL
+              const cleanUrl = post.coverImage.url.startsWith('/') ? post.coverImage.url.substring(1) : post.coverImage.url;
+              imageUrl = `${PAYLOAD_CONFIG.GCS_BASE_URL}/${cleanUrl}`;
+            } else {
+              // Fallback to Payload API base URL for local development
+              const baseUrl = PAYLOAD_CONFIG.API_URL.replace('/api', '');
+              imageUrl = `${baseUrl}${post.coverImage.url}`;
+            }
           }
         } catch (error) {
           console.warn('Error constructing image URL:', error);
@@ -89,7 +98,7 @@ export async function GET() {
         title: post.title || 'Untitled Post',
         excerpt: post.excerpt || 'No excerpt available',
         slug: post.slug || `post-${post.id}`,
-        author: post.author?.name || 'Unknown Author',
+        author: post.authors?.[0]?.name || 'Unknown Author',
         date: post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', {
           year: 'numeric',
           month: 'short',
@@ -98,7 +107,7 @@ export async function GET() {
         readTime: post.readTime || '5 min read',
         category: post.categories?.[0]?.title || 'Uncategorized',
         image: imageUrl,
-        tags: post.tags?.map((tag) => typeof tag === 'string' ? tag : (tag as { title: string }).title).filter(Boolean) || [],
+        tags: post.tags?.map((tag) => tag.title).filter(Boolean) || [],
         content: post.content,
         status: post.status,
         publishedAt: post.publishedAt || '',
@@ -157,6 +166,7 @@ export async function POST(request: Request) {
       queryParams.append('where[tags][title][equals]', tag);
     }
 
+    queryParams.append('populate', 'authors,categories,tags,coverImage');
     const apiUrl = `${PAYLOAD_CONFIG.API_URL}/posts?${queryParams.toString()}`;
 
     const response = await fetch(apiUrl, {
@@ -187,9 +197,17 @@ export async function POST(request: Request) {
           if (post.coverImage.url.startsWith('http')) {
             imageUrl = post.coverImage.url;
           } else {
-            // If it's a relative URL, construct the full URL
-            const baseUrl = PAYLOAD_CONFIG.API_URL.replace('/api', '');
-            imageUrl = `${baseUrl}${post.coverImage.url}`;
+            // For Google Cloud Storage, construct the proper URL
+            // Check if it's a GCS URL pattern
+            if (post.coverImage.url.includes('media/') || post.coverImage.url.startsWith('/media/')) {
+              // This is likely a Google Cloud Storage URL
+              const cleanUrl = post.coverImage.url.startsWith('/') ? post.coverImage.url.substring(1) : post.coverImage.url;
+              imageUrl = `${PAYLOAD_CONFIG.GCS_BASE_URL}/${cleanUrl}`;
+            } else {
+              // Fallback to Payload API base URL for local development
+              const baseUrl = PAYLOAD_CONFIG.API_URL.replace('/api', '');
+              imageUrl = `${baseUrl}${post.coverImage.url}`;
+            }
           }
         } catch (error) {
           console.warn('Error constructing image URL:', error);
@@ -202,7 +220,7 @@ export async function POST(request: Request) {
         title: post.title || 'Untitled Post',
         excerpt: post.excerpt || 'No excerpt available',
         slug: post.slug || `post-${post.id}`,
-        author: post.author?.name || 'Unknown Author',
+        author: post.authors?.[0]?.name || 'Unknown Author',
         date: post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', {
           year: 'numeric',
           month: 'short',
@@ -211,7 +229,7 @@ export async function POST(request: Request) {
         readTime: post.readTime || '5 min read',
         category: post.categories?.[0]?.title || 'Uncategorized',
         image: imageUrl,
-        tags: post.tags?.map((tag) => typeof tag === 'string' ? tag : (tag as { title: string }).title).filter(Boolean) || [],
+        tags: post.tags?.map((tag) => tag.title).filter(Boolean) || [],
         content: post.content,
         status: post.status,
         publishedAt: post.publishedAt || '',

@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { Zap, Gauge, Rocket, Clock, ArrowRight, TrendingUp } from 'lucide-react';
+import { Zap, Gauge, Rocket, Clock, ArrowRight } from 'lucide-react';
 
 const LightningFast = () => {
   const ref = useRef(null);
@@ -12,7 +12,6 @@ const LightningFast = () => {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
 
   return (
     <section id="lightning-fast" ref={ref} className="relative min-h-screen bg-gradient-to-br from-yellow-50 to-orange-50 overflow-hidden">

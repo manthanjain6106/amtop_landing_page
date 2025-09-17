@@ -5,18 +5,12 @@ import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
-  Sparkles, 
   Bug, 
   Zap, 
-  Shield, 
   Plus, 
-  AlertTriangle,
   CheckCircle,
   Clock,
-  Download,
-  Star,
-  Heart,
-  Users
+  Star
 } from 'lucide-react';
 
 const ChangelogPage = () => {
@@ -31,21 +25,25 @@ const ChangelogPage = () => {
       date: 'January 15, 2025',
       type: 'major',
       title: 'amTop Platform Launch',
-      description: 'Introducing amTop - the intelligent AI platform that transforms your business with automated workflows and smart integrations.',
+      description: 'This is where it all begins. With version 1.0.0, we\'re officially launching amTop into the world — a clean, powerful foundation built on Agentic AI. You\'ll get core integrations (Google Analytics, Search Console, Meta), real-time data sync, AI-powered campaign optimization, automated reporting, enterprise-grade security, and a responsive web interface. It\'s the first step in our journey to take the grunt work out of marketing and put growth back in your hands.',
       changes: [
-        { type: 'feature', text: 'AI-powered automation platform' },
-        { type: 'feature', text: 'Google Analytics integration' },
-        { type: 'feature', text: 'Meta Ads integration' },
-        { type: 'feature', text: 'Ads Agent AI optimization' },
-        { type: 'feature', text: 'Real-time data synchronization' },
-        { type: 'feature', text: 'Cloud-native architecture' },
-        { type: 'feature', text: 'Enterprise-grade security' },
-        { type: 'feature', text: 'Responsive web interface' }
+        { type: 'feature', text: 'Agentic AI Command Center – Turns raw data into actionable insights and runs campaigns from creation to conversion' },
+        { type: 'feature', text: 'Seamless Integrations – Google Analytics, Google Search Console, and Meta — all in one place' },
+        { type: 'feature', text: 'Competitor & Trend Tracking – Stay ahead with real-time monitoring of industry shifts' },
+        { type: 'feature', text: 'SEO & Outreach Automation – Find backlink opportunities, draft SEO blogs, and publish directly' },
+        { type: 'feature', text: 'Social Listening + Content Calendar – Scan audience conversations and auto-generate day-by-day content plans' },
+        { type: 'feature', text: 'Self-Optimizing Campaigns – Ads that launch, learn, and reallocate budget to winners automatically' },
+        { type: 'feature', text: 'Whitepaper Generation – Automatically create professional, data-backed whitepapers to showcase expertise, win trust, and support sales' },
+        { type: 'feature', text: 'Proactive Alerts & Next Actions – Monitors KPIs (traffic, conversions, ROAS) and gives instant fixes when things go wrong' },
+        { type: 'feature', text: 'Automated Reporting – Clear, shareable reports written in seconds — no more spreadsheets' },
+        { type: 'feature', text: '24/7 Monitoring & Support – Always-on KPI tracking with enterprise-grade security, AI support + human experts' },
+        { type: 'feature', text: 'Lightning-Fast Data Refresh – Real-time updates for instant decisions' },
+        { type: 'feature', text: 'Cloud-Native Architecture – Scalable, fast, and reliable — built for growing teams' }
       ],
       highlights: [
-        'Complete AI automation platform',
-        'Seamless third-party integrations',
-        'Enterprise-ready solution'
+        'Complete Agentic AI foundation',
+        'All-in-one marketing command center',
+        'Enterprise-ready with 24/7 support'
       ]
     }
   ];
@@ -109,7 +107,7 @@ const ChangelogPage = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
             >
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-600">Changelog</span>
+              The Product That Never Sleeps
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -117,8 +115,10 @@ const ChangelogPage = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl text-gray-600 leading-relaxed mb-8"
             >
-              Stay up to date with the latest features, improvements, and fixes 
-              in the amTop platform. We&apos;re constantly evolving to serve you better.
+              We believe your marketing stack should get smarter every single day. That&apos;s
+              why amTop is constantly improving — from new features and smarter
+              automations to small fixes that make your workflow smoother. This changelog
+              is where you&apos;ll see it all: the upgrades, the optimizations, and the behind-the-scenes work that keeps your growth engine running faster than ever.
             </motion.p>
           </motion.div>
         </div>

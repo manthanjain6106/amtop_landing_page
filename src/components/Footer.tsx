@@ -4,7 +4,6 @@ import {
   Linkedin, 
   Mail, 
   Phone, 
-  MapPin,
   ArrowRight,
   Youtube,
   Instagram

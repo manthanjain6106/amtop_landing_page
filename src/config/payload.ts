@@ -1,7 +1,11 @@
 // Payload CMS Configuration
 export const PAYLOAD_CONFIG = {
-  // Use environment variable for API URL, fallback to localhost for development
-  API_URL: process.env.NEXT_PUBLIC_PAYLOAD_API_URL || process.env.PAYLOAD_API_URL || 'http://localhost:3001/api',
+  // Use environment variable for API URL, fallback to production URL
+  API_URL: process.env.NEXT_PUBLIC_PAYLOAD_API_URL || process.env.PAYLOAD_API_URL || 'https://payload-cms-sandy.vercel.app/api',
+  
+  // Google Cloud Storage configuration
+  GCS_BUCKET: process.env.GOOGLE_CLOUD_BUCKET || 'amtop-cloud-storage',
+  GCS_BASE_URL: process.env.GOOGLE_CLOUD_BASE_URL || `https://storage.googleapis.com/${process.env.GOOGLE_CLOUD_BUCKET || 'amtop-cloud-storage'}`,
   
   // Default settings
   DEFAULT_LIMIT: 10,

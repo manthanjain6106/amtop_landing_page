@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { Shield, Lock, Eye, CheckCircle, ArrowRight, BadgeCheck } from 'lucide-react';
+import { Shield, Lock, Eye, ArrowRight, BadgeCheck } from 'lucide-react';
 
 const EnterpriseSecurity = () => {
   const ref = useRef(null);
@@ -12,7 +12,6 @@ const EnterpriseSecurity = () => {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "60%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
 
   return (
     <section id="enterprise-security" ref={ref} className="relative min-h-screen bg-gradient-to-br from-green-50 to-emerald-50 overflow-hidden">

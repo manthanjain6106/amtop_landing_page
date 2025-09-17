@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Check, Star, ArrowRight, Gift, Zap } from 'lucide-react';
+import { Check, ArrowRight, Zap } from 'lucide-react';
 
 export default function PricingPage() {
   const [ref, inView] = useInView({

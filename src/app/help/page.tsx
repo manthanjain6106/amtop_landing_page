@@ -2,7 +2,7 @@
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Search, BookOpen, Video, MessageCircle, FileText, Settings, Users, Zap, Shield, Globe, ArrowRight, Mail } from 'lucide-react';
+import { Search, BookOpen, Video, MessageCircle, Settings, Users, Zap, Shield, Globe, ArrowRight, Mail } from 'lucide-react';
 
 const HelpPage = () => {
   const helpCategories = [

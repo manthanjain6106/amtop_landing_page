@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { Users, MessageCircle, Share2, UserCheck, ArrowRight, Globe } from 'lucide-react';
+import { Users, MessageCircle, Share2, UserCheck, ArrowRight } from 'lucide-react';
 
 const TeamCollaboration = () => {
   const ref = useRef(null);
@@ -12,7 +12,6 @@ const TeamCollaboration = () => {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "45%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
 
   return (
     <section id="team-collaboration" ref={ref} className="relative min-h-screen bg-gradient-to-br from-cyan-50 to-blue-50 overflow-hidden">

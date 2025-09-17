@@ -4,13 +4,21 @@ import { PAYLOAD_CONFIG } from '@/config/payload';
 interface PayloadTag {
   id: string;
   title: string;
+  slug: string;
   description?: string;
-  postCount?: number;
+}
+
+interface TransformedTag {
+  id: string;
+  title: string;
+  description: string;
+  postCount: number;
 }
 
 export async function GET() {
   try {
-    const response = await fetch(`${PAYLOAD_CONFIG.API_URL}/tags?sort=title`, {
+    // Fetch tags from Payload CMS
+    const response = await fetch(`${PAYLOAD_CONFIG.API_URL}/tags?sort=title&limit=100`, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -22,16 +30,17 @@ export async function GET() {
 
     const data = await response.json();
     
-    const tags = data.docs?.map((tag: PayloadTag) => ({
+    // Transform the data to match your blog page structure
+    const transformedTags: TransformedTag[] = data.docs?.map((tag: PayloadTag) => ({
       id: tag.id,
-      title: tag.title,
-      description: tag.description || '',
-      postCount: tag.postCount || 0
+      title: tag.title || 'Untagged',
+      description: tag.description || `Posts tagged with ${tag.title}`,
+      postCount: 0, // We'll calculate this separately if needed
     })) || [];
 
     return NextResponse.json({
       success: true,
-      tags
+      tags: transformedTags,
     });
 
   } catch (error) {

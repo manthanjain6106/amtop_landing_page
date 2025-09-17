@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { Clock, Globe, Zap, Activity, ArrowRight, Moon } from 'lucide-react';
+import { Clock, Globe, Zap, Activity, ArrowRight } from 'lucide-react';
 
 const AlwaysOn = () => {
   const ref = useRef(null);
@@ -12,7 +12,6 @@ const AlwaysOn = () => {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "55%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
 
   return (
     <section id="always-on" ref={ref} className="relative min-h-screen bg-gradient-to-br from-slate-50 to-gray-50 overflow-hidden">

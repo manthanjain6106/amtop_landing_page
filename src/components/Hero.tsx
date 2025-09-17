@@ -1,20 +1,13 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useRef } from 'react';
+import Image from 'next/image';
 
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
-
-  // Parallax effects
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   // Enhanced animation variants
   const containerVariants = {
@@ -144,19 +137,35 @@ const Hero = () => {
           {/* Enhanced Analytics GIF with 3D effect */}
           <motion.div
             variants={itemVariants}
-            className="mb-16 sm:mb-20 relative"
+            className="mb-16 sm:mb-20 relative flex justify-center"
           >
             <motion.div
-              className="relative"
+              className="relative max-w-4xl w-full"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-3xl blur-2xl"></div>
-              <img 
-                src="/GIF/Anylitics.gif" 
-                alt="AMTOP Analytics Dashboard - See your workflows in real-time with comprehensive monitoring and insights" 
-                className="rounded-3xl shadow-2xl max-w-full h-auto mx-auto border border-gray-200/50 relative z-10"
-              />
+              <div className="relative w-full h-auto rounded-3xl overflow-hidden shadow-2xl border border-gray-200/50 bg-white">
+                <Image 
+                  src="/GIF/Analytics.gif" 
+                  alt="AMTOP Analytics Dashboard - See your workflows in real-time with comprehensive monitoring and insights" 
+                  width={1200}
+                  height={600}
+                  className="w-full h-auto object-contain rounded-3xl block"
+                  priority
+                  style={{ minHeight: '400px', maxHeight: '600px' }}
+                  onLoad={() => console.log('GIF loaded successfully')}
+                  onError={(e) => {
+                    console.error('GIF failed to load:', e);
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const parent = target.parentElement;
+                    if (parent) {
+                      parent.innerHTML = '<div class="w-full h-96 bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl flex items-center justify-center"><div class="text-center"><div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"><svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg></div><p class="text-gray-600 font-medium">Analytics Dashboard Preview</p><p class="text-sm text-gray-500 mt-2">GIF loading...</p></div></div>';
+                    }
+                  }}
+                />
+              </div>
               <div className="absolute inset-0 rounded-3xl ring-2 ring-blue-200/30 ring-offset-4 ring-offset-white/50"></div>
             </motion.div>
           </motion.div>

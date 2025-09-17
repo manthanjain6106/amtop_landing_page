@@ -1,15 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 const Testimonials = () => {
-  const [forceShow, setForceShow] = useState(false);
-
   // Fallback animation trigger
   useEffect(() => {
     const timer = setTimeout(() => {
-      setForceShow(true);
-    }, 2000); // Show after 2 seconds if intersection observer fails
+      // Force show after 2 seconds if intersection observer fails
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);

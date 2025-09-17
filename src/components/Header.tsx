@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -92,9 +93,11 @@ const Header = () => {
               transition={{ duration: 0.2 }}
               className="flex items-center h-12 sm:h-16 md:h-18 lg:h-20"
             >
-              <img
+              <Image
                 src="/images/logo.png"
                 alt="amTop Logo"
+                width={80}
+                height={80}
                 className="h-12 sm:h-16 md:h-18 lg:h-20 w-auto object-contain brightness-0 filter"
               />
             </motion.a>
