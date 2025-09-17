@@ -57,13 +57,6 @@ const AboutPage = () => {
       hasImage: true
     },
     {
-      name: 'Indresh Pandey',
-      role: 'VP of Marketing',
-      bio: 'Marketing strategist focused on growth and brand development.',
-      image: null,
-      hasImage: false
-    },
-    {
       name: 'Manthan Jain',
       role: 'VP of Engineering',
       bio: 'Engineering leader building scalable and robust technical solutions.',
@@ -74,8 +67,8 @@ const AboutPage = () => {
       name: 'Manashi Sheth',
       role: 'VP of Designing',
       bio: 'Creative director shaping user experience and visual excellence.',
-      image: null,
-      hasImage: false
+      image: '/images/Manashi.jpeg',
+      hasImage: true
     }
   ];
 
@@ -246,7 +239,7 @@ const AboutPage = () => {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 sm:gap-10 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-8">
             {team.map((member, index) => (
               <motion.div
                 key={member.name}
