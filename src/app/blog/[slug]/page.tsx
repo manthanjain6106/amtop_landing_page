@@ -262,17 +262,17 @@ const BlogPostPage = () => {
               )}
 
               {/* Explore More Articles Section */}
-              <div className="mt-12 pt-8 border-t border-gray-200 text-center">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Enjoyed this article?</h3>
-                <p className="text-gray-600 mb-6">
+              <div className="mt-20 pt-8 border-t border-gray-200 text-center">
+                <h3 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-6">Enjoyed this article?</h3>
+                <p className="text-lg md:text-xl text-gray-600 mb-8">
                   Explore more insights, tips, and stories about AI agents, automation, and the future of business.
                 </p>
                 <div className="flex justify-center gap-4">
                   <Link
                     href="/blog"
-                    className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    className="flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold"
                   >
-                    <BookOpen size={20} />
+                    <BookOpen size={24} />
                     Browse More Articles
                   </Link>
                 </div>

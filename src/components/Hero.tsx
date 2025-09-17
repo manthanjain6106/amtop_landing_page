@@ -140,7 +140,7 @@ const Hero = () => {
             className="mb-16 sm:mb-20 relative flex justify-center"
           >
             <motion.div
-              className="relative max-w-4xl w-full"
+              className="relative max-w-6xl w-full"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
@@ -149,11 +149,11 @@ const Hero = () => {
                 <Image 
                   src="/GIF/Analytics.gif" 
                   alt="AMTOP Analytics Dashboard - See your workflows in real-time with comprehensive monitoring and insights" 
-                  width={1200}
-                  height={600}
+                  width={1600}
+                  height={800}
                   className="w-full h-auto object-contain rounded-3xl block"
                   priority
-                  style={{ minHeight: '400px', maxHeight: '600px' }}
+                  style={{ minHeight: '500px', maxHeight: '800px' }}
                   onLoad={() => console.log('GIF loaded successfully')}
                   onError={(e) => {
                     console.error('GIF failed to load:', e);
