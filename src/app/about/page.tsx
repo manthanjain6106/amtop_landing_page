@@ -233,7 +233,7 @@ const AboutPage = () => {
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">Meet Our Team</h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              Tools don&apos;t build themselves. People do. And at Amtp, our team is obsessed
+              Tools don&apos;t build themselves. People do. And at amTop, our team is obsessed
               with one thing: helping you grow without wasting time. Scroll down and see the
               folks who power your marketing command center.
             </p>
