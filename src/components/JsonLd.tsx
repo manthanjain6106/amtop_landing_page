@@ -168,7 +168,7 @@ export const ArticleSchema: Article = {
   description: 'Learn how to implement AI automation in your business',
   author: {
     '@type': 'Person',
-    name: 'AMTOP Team'
+    name: 'amTop Team'
   },
   publisher: OrganizationSchema,
   datePublished: new Date().toISOString(),

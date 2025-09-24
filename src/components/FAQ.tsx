@@ -15,20 +15,20 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "What makes Amtop different from other marketing tools?",
-      answer: "Amtop isn't just another dashboard that throws data at you. It's powered by Agentic AI, which doesn't just show you numbers — it connects the dots, surfaces opportunities, and even runs smarter ad campaigns that optimize themselves. While other tools keep you busy, Amtop cuts through the grind so you can focus on scaling."
+      question: "What makes amTop different from other marketing tools?",
+      answer: "amTop isn't just another dashboard that throws data at you. It's powered by Agentic AI, which doesn't just show you numbers — it connects the dots, surfaces opportunities, and even runs smarter ad campaigns that optimize themselves. While other tools keep you busy, amTop cuts through the grind so you can focus on scaling."
     },
     {
-      question: "Who is Amtop built for?",
-      answer: "If you're a founder, marketer, or growing business that's tired of juggling tools, wasting hours on reports, or running ads that don't perform, Amtop is for you. Think of it as your always-on marketing command center, powered by AI that actually works for you."
+      question: "Who is amTop built for?",
+      answer: "If you're a founder, marketer, or growing business that's tired of juggling tools, wasting hours on reports, or running ads that don't perform, amTop is for you. Think of it as your always-on marketing command center, powered by AI that actually works for you."
     },
     {
-      question: "Do I need to be \"techy\" to use Amtop?",
-      answer: "Not at all. We built Amtop to be simple, clean, and easy to use — no bloated menus or confusing dashboards. If you can check your email, you can use Amtop. And if you ever need help, our 24/7 AI + human support has your back."
+      question: "Do I need to be \"techy\" to use amTop?",
+      answer: "Not at all. We built amTop to be simple, clean, and easy to use — no bloated menus or confusing dashboards. If you can check your email, you can use amTop. And if you ever need help, our 24/7 AI + human support has your back."
     },
     {
-      question: "Is my data safe with Amtop?",
-      answer: "Yes — your data is 100% safe with us. Amtop uses enterprise-grade security, the same level trusted by leading global platforms, to protect every piece of information you connect. All data transfers are fully encrypted, your reports are stored securely, and we never sell or share your information — ever. On top of that, our systems refresh in real time, so you're not only safe but also always up to date. In short: you stay in control, your data stays private, and we handle the heavy lifting in the background."
+      question: "Is my data safe with amTop?",
+      answer: "Yes — your data is 100% safe with us. amTop uses enterprise-grade security, the same level trusted by leading global platforms, to protect every piece of information you connect. All data transfers are fully encrypted, your reports are stored securely, and we never sell or share your information — ever. On top of that, our systems refresh in real time, so you're not only safe but also always up to date. In short: you stay in control, your data stays private, and we handle the heavy lifting in the background."
     }
   ];
 

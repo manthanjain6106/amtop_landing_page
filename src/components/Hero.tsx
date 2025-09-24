@@ -148,7 +148,7 @@ const Hero = () => {
               <div className="relative w-full h-auto rounded-3xl overflow-hidden shadow-2xl border border-gray-200/50 bg-white">
                 <Image 
                   src="/GIF/Analytics.gif" 
-                  alt="AMTOP Analytics Dashboard - See your workflows in real-time with comprehensive monitoring and insights" 
+                  alt="amTop Analytics Dashboard - See your workflows in real-time with comprehensive monitoring and insights" 
                   width={1600}
                   height={800}
                   className="w-full h-auto object-contain rounded-3xl block"

@@ -96,7 +96,7 @@ const BlogPostPage = () => {
     return (
       <>
         <SEO 
-          title="Loading... - AMTOP Blog"
+          title="Loading... - amTop Blog"
           description="Loading blog post..."
         />
         <div className="min-h-screen bg-white">
@@ -119,7 +119,7 @@ const BlogPostPage = () => {
     return (
       <>
         <SEO 
-          title="Post Not Found - AMTOP Blog"
+          title="Post Not Found - amTop Blog"
           description="The requested blog post could not be found."
         />
         <div className="min-h-screen bg-white">
@@ -150,7 +150,7 @@ const BlogPostPage = () => {
   return (
     <>
       <SEO 
-        title={`${post.title} - AMTOP Blog`}
+        title={`${post.title} - amTop Blog`}
         description={post.excerpt}
         keywords={post.tags}
         type="article"

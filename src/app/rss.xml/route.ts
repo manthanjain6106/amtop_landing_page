@@ -32,7 +32,7 @@ export async function GET() {
     const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>AMTOP Blog</title>
+    <title>amTop Blog</title>
     <description>Latest insights on AI agents, automation, and business transformation</description>
     <link>https://amtop.com</link>
     <atom:link href="https://amtop.com/rss.xml" rel="self" type="application/rss+xml" />
@@ -45,7 +45,7 @@ export async function GET() {
       <link>https://amtop.com/blog/${post.slug}</link>
       <guid>https://amtop.com/blog/${post.slug}</guid>
       <pubDate>${post.publishedAt ? new Date(post.publishedAt).toUTCString() : new Date().toUTCString()}</pubDate>
-      <author>${post.author?.name || 'AMTOP Team'}</author>
+      <author>${post.author?.name || 'amTop Team'}</author>
     </item>
     `).join('')}
   </channel>

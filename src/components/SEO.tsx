@@ -18,10 +18,10 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({
-  title = 'AMTOP - Advanced Management Tools & Operations Platform',
-  description = 'AMTOP provides advanced management tools and operations platform for modern businesses. Discover powerful solutions for analytics, automation, and team collaboration.',
-  keywords = ['management tools', 'operations platform', 'business analytics', 'team collaboration', 'automation', 'AMTOP'],
-  author = 'AMTOP Team',
+  title = 'amTop - Advanced Management Tools & Operations Platform',
+  description = 'amTop provides advanced management tools and operations platform for modern businesses. Discover powerful solutions for analytics, automation, and team collaboration.',
+  keywords = ['management tools', 'operations platform', 'business analytics', 'team collaboration', 'automation', 'amTop'],
+  author = 'amTop Team',
   image = '/images/og-image.jpg',
   url = 'https://amtop.com',
   type = 'website',
@@ -33,9 +33,9 @@ const SEO: React.FC<SEOProps> = ({
   noFollow = false,
   canonical
 }) => {
-  const fullTitle = title === 'AMTOP - Advanced Management Tools & Operations Platform' 
+  const fullTitle = title === 'amTop - Advanced Management Tools & Operations Platform' 
     ? title 
-    : `${title} | AMTOP`
+    : `${title} | amTop`
   
   const fullUrl = canonical || url
   const fullImage = image.startsWith('http') ? image : `https://amtop.com${image}`
@@ -51,7 +51,7 @@ const SEO: React.FC<SEOProps> = ({
       image: fullImage,
       publisher: {
         '@type': 'Organization',
-        name: 'AMTOP',
+        name: 'amTop',
         url: 'https://amtop.com',
         logo: {
           '@type': 'ImageObject',
@@ -161,7 +161,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={fullImage} />
       <meta property="og:url" content={fullUrl} />
-      <meta property="og:site_name" content="AMTOP" />
+      <meta property="og:site_name" content="amTop" />
       <meta property="og:locale" content="en_US" />
       
       {/* Twitter Card Meta Tags */}

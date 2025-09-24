@@ -81,9 +81,9 @@ const BlogPage = () => {
   return (
     <>
       <SEO 
-        title="AMTOP Blog - Insights on AI Agents, Automation & Business"
+        title="amTop Blog - Insights on AI Agents, Automation & Business"
         description="Discover expert insights, tips, and stories about AI agents, automation, and the future of business. Stay ahead with practical advice from industry professionals."
-        keywords={['AI agents', 'automation', 'business insights', 'AI technology', 'business automation', 'AMTOP blog']}
+        keywords={['AI agents', 'automation', 'business insights', 'AI technology', 'business automation', 'amTop blog']}
         type="blog"
         url="https://amtop.com/blog"
         image="/images/blog-og-image.jpg"

@@ -465,7 +465,7 @@ const TermsOfServicePage = () => {
               Email: <a href="mailto:admin@amtop.in" style={{ color: '#1a73e8', textDecoration: 'none' }}>admin@amtop.in</a>
             </p>
             <p style={{ fontSize: '16px', color: '#1a1a1a', margin: 0 }}>
-              Website: <a href="https://amtop.in" style={{ color: '#1a73e8', textDecoration: 'none' }}>amtop.in</a>
+              Website: <a href="https://amtop.in" style={{ color: '#1a73e8', textDecoration: 'none' }}>amTop.in</a>
             </p>
           </div>
         </div>
