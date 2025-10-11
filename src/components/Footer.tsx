@@ -42,8 +42,8 @@ const Footer = () => {
     {
       title: 'Legal',
       links: [
-        { name: 'Privacy Policy', href: '/privacy' },
-        { name: 'Terms of Service', href: '/terms' }
+        { name: 'Privacy Policy', href: 'https://www.amtop.in/privacy' },
+        { name: 'Terms of Service', href: 'https://www.amtop.in/terms' }
       ]
     }
   ];

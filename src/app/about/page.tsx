@@ -352,7 +352,7 @@ const AboutPage = () => {
       </section>
 
       {/* Values Section */}
-      <section id="values" className="section-padding bg-gradient-to-b from-gray-50 to-white relative">
+      <section id="values" className="pt-24 pb-12 sm:pt-28 sm:pb-16 bg-gradient-to-b from-gray-50 to-white relative">
         {/* Background elements */}
         <div className="absolute inset-0 bg-grid-pattern opacity-5 z-0"></div>
         <div className="absolute top-0 right-0 w-64 h-64 border-t-4 border-r-4 border-gray-100 opacity-30 hidden lg:block"></div>
@@ -384,7 +384,7 @@ const AboutPage = () => {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 mb-10">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
@@ -437,7 +437,7 @@ const AboutPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gray-50 border border-gray-100 rounded-2xl p-8 shadow-lg text-center"
+            className="bg-gray-50 border border-gray-100 rounded-2xl p-8 shadow-lg text-center mb-0"
           >
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Values in Action</h3>
             <p className="text-base text-gray-700 mb-6 max-w-3xl mx-auto">
@@ -456,9 +456,9 @@ const AboutPage = () => {
           </motion.div>
         </div>
       </section>
-
+      
       {/* Team Section */}
-      <section id="team" className="section-padding bg-gradient-to-b from-white to-gray-50 relative">
+      <section id="team" className="pb-16 sm:pb-20 bg-gradient-to-b from-white to-gray-50 relative pt-0 sm:pt-4">
         {/* Background elements */}
         <div className="absolute inset-0 bg-grid-pattern opacity-5 z-0"></div>
         <div className="absolute right-0 bottom-0 w-64 h-64 border-r-4 border-b-4 border-gray-100 opacity-30 hidden lg:block"></div>
@@ -579,7 +579,7 @@ const AboutPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="mt-16 text-center max-w-3xl mx-auto"
+            className="mt-8 text-center max-w-3xl mx-auto mb-0"
           >
             <p className="text-lg text-gray-700 italic">
               &quot;Our team combines decades of experience in marketing, AI, and product development to create
@@ -589,9 +589,9 @@ const AboutPage = () => {
           </motion.div>
         </div>
       </section>
-
+      
       {/* Journey Section */}
-      <section id="journey" className="section-padding bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      <section id="journey" className="pt-0 pb-24 sm:pt-4 sm:pb-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
         {/* Background elements */}
         <div className="absolute inset-0 bg-grid-pattern opacity-5 z-0"></div>
         <div className="absolute left-0 top-0 w-64 h-64 border-l-4 border-t-4 border-gray-100 opacity-30 hidden lg:block"></div>
