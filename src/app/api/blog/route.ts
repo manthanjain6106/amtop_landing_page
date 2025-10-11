@@ -7,10 +7,13 @@ interface PayloadPost {
   excerpt: string;
   slug: string;
   readTime?: string;
-  authors?: Array<{
+  author?: {
     id: string;
     name: string;
-  }>;
+    avatar?: {
+      url: string;
+    };
+  };
   publishedAt?: string;
   categories?: Array<{
     title: string;
@@ -32,6 +35,7 @@ interface TransformedPost {
   excerpt: string;
   slug: string;
   author: string;
+  authorImage?: string;
   date: string;
   readTime: string;
   category: string;
@@ -46,7 +50,7 @@ interface TransformedPost {
 export async function GET() {
   try {
     // Fetch posts from Payload CMS with populated relationships
-    const response = await fetch(`${PAYLOAD_CONFIG.API_URL}/posts?where[status][equals]=published&sort=-publishedAt&limit=10&populate=authors,categories,tags,coverImage`, {
+    const response = await fetch(`${PAYLOAD_CONFIG.API_URL}/posts?where[status][equals]=published&sort=-publishedAt&limit=10&populate=author,categories,tags,coverImage`, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -62,8 +66,8 @@ export async function GET() {
     const transformedPosts: TransformedPost[] = data.docs
       ?.filter((post: PayloadPost) => {
         // Only include posts that have valid content (not just IDs)
+        // Make excerpt optional to avoid filtering out posts
         return post.title && post.title.trim() !== '' && 
-               post.excerpt && post.excerpt.trim() !== '' &&
                post.slug && post.slug.trim() !== '';
       })
       ?.map((post: PayloadPost) => {
@@ -96,9 +100,10 @@ export async function GET() {
       return {
         id: post.id,
         title: post.title || 'Untitled Post',
-        excerpt: post.excerpt || 'No excerpt available',
+        excerpt: post.excerpt || '',
         slug: post.slug || `post-${post.id}`,
-        author: post.authors?.[0]?.name || 'Unknown Author',
+        author: post.author?.name || 'Unknown Author',
+        authorImage: post.author?.avatar?.url ? (post.author.avatar.url.startsWith('http') ? post.author.avatar.url : `${PAYLOAD_CONFIG.GCS_BASE_URL}/${post.author.avatar.url.startsWith('/') ? post.author.avatar.url.substring(1) : post.author.avatar.url}`) : '/images/author-placeholder.jpg',
         date: post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', {
           year: 'numeric',
           month: 'short',
@@ -166,7 +171,7 @@ export async function POST(request: Request) {
       queryParams.append('where[tags][title][equals]', tag);
     }
 
-    queryParams.append('populate', 'authors,categories,tags,coverImage');
+    queryParams.append('populate', 'author,categories,tags,coverImage');
     const apiUrl = `${PAYLOAD_CONFIG.API_URL}/posts?${queryParams.toString()}`;
 
     const response = await fetch(apiUrl, {
@@ -184,8 +189,8 @@ export async function POST(request: Request) {
     const transformedPosts: TransformedPost[] = data.docs
       ?.filter((post: PayloadPost) => {
         // Only include posts that have valid content (not just IDs)
+        // Make excerpt optional to avoid filtering out posts
         return post.title && post.title.trim() !== '' && 
-               post.excerpt && post.excerpt.trim() !== '' &&
                post.slug && post.slug.trim() !== '';
       })
       ?.map((post: PayloadPost) => {
@@ -218,9 +223,10 @@ export async function POST(request: Request) {
       return {
         id: post.id,
         title: post.title || 'Untitled Post',
-        excerpt: post.excerpt || 'No excerpt available',
+        excerpt: post.excerpt || '',
         slug: post.slug || `post-${post.id}`,
-        author: post.authors?.[0]?.name || 'Unknown Author',
+        author: post.author?.name || 'Unknown Author',
+        authorImage: post.author?.avatar?.url ? (post.author.avatar.url.startsWith('http') ? post.author.avatar.url : `${PAYLOAD_CONFIG.GCS_BASE_URL}/${post.author.avatar.url.startsWith('/') ? post.author.avatar.url.substring(1) : post.author.avatar.url}`) : '/images/author-placeholder.jpg',
         date: post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', {
           year: 'numeric',
           month: 'short',

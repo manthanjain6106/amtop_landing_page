@@ -41,7 +41,7 @@ export async function GET() {
     ${posts.map((post: PayloadPost) => `
     <item>
       <title><![CDATA[${post.title}]]></title>
-      <description><![CDATA[${post.excerpt}]]></description>
+      <description><![CDATA[${post.excerpt || `Read ${post.title} on amTop Blog`}]]></description>
       <link>https://amtop.com/blog/${post.slug}</link>
       <guid>https://amtop.com/blog/${post.slug}</guid>
       <pubDate>${post.publishedAt ? new Date(post.publishedAt).toUTCString() : new Date().toUTCString()}</pubDate>

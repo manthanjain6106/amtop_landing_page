@@ -6,6 +6,7 @@ interface BlogPost {
   excerpt: string;
   slug: string;
   author: string;
+  authorImage?: string;
   date: string;
   readTime: string;
   category: string;

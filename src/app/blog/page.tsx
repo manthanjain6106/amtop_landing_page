@@ -47,6 +47,7 @@ const BlogPage = () => {
     title: posts[0].title,
     excerpt: posts[0].excerpt,
     author: posts[0].author,
+    authorImage: posts[0].authorImage,
     date: posts[0].date,
     readTime: posts[0].readTime,
     category: posts[0].category,
@@ -55,19 +56,18 @@ const BlogPage = () => {
     slug: posts[0].slug
   } : null;
 
-
-
-  // Use posts from CMS, excluding the first one (featured article)
-  const recentArticles = posts.length > 1 ? posts.slice(1, 7).map(post => ({
+  // Use all posts from CMS in recent articles (including the featured article)
+  const recentArticles = posts.map(post => ({
     title: post.title,
     excerpt: post.excerpt,
     author: post.author,
+    authorImage: post.authorImage,
     date: post.date,
     readTime: post.readTime,
     category: post.category,
     image: post.image,
     slug: post.slug
-  })) : [];
+  }));
 
   // Use tags from CMS
   const popularTags = tags.map(tag => tag.title);
@@ -157,6 +157,7 @@ const BlogPage = () => {
             {!loading && !error && posts.length === 0 && (
               <div className="mt-6 p-4 bg-gray-50 border border-gray-200 rounded-xl text-gray-600">
                 <p>No articles found. Try adjusting your search or check back later.</p>
+                <p className="text-sm mt-2">Debug: Total posts from API: {totalPosts}</p>
               </div>
             )}
             
@@ -202,12 +203,24 @@ const BlogPage = () => {
                   <h3 className="text-3xl font-bold text-gray-900 mb-4 leading-tight">
                     {featuredArticle.title}
                   </h3>
-                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                    {featuredArticle.excerpt}
-                  </p>
+                  {featuredArticle.excerpt && featuredArticle.excerpt.trim() && (
+                    <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                      {featuredArticle.excerpt}
+                    </p>
+                  )}
                   <div className="flex items-center gap-4 text-sm text-gray-500 mb-6">
                     <span className="flex items-center gap-2">
-                      <User size={16} />
+                      {featuredArticle.authorImage && featuredArticle.authorImage !== '/images/author-placeholder.jpg' ? (
+                        <Image 
+                          src={featuredArticle.authorImage} 
+                          alt={featuredArticle.author}
+                          width={16}
+                          height={16}
+                          className="w-4 h-4 rounded-full object-cover"
+                        />
+                      ) : (
+                        <User size={16} />
+                      )}
                       {featuredArticle.author}
                     </span>
                     <span className="flex items-center gap-2">
@@ -304,12 +317,24 @@ const BlogPage = () => {
                     <h3 className="text-xl font-semibold text-gray-900 mb-3 hover:text-blue-600 transition-colors duration-200">
                       {article.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 line-clamp-3">
-                      {article.excerpt}
-                    </p>
+                    {article.excerpt && article.excerpt.trim() && (
+                      <p className="text-gray-600 mb-4 line-clamp-3">
+                        {article.excerpt}
+                      </p>
+                    )}
                     <div className="flex items-center justify-between text-sm text-gray-500">
                       <span className="flex items-center gap-2">
-                        <User size={14} />
+                        {article.authorImage && article.authorImage !== '/images/author-placeholder.jpg' ? (
+                          <Image 
+                            src={article.authorImage} 
+                            alt={article.author}
+                            width={14}
+                            height={14}
+                            className="w-3.5 h-3.5 rounded-full object-cover"
+                          />
+                        ) : (
+                          <User size={14} />
+                        )}
                         {article.author}
                       </span>
                       <span className="flex items-center gap-2">

@@ -79,7 +79,7 @@ const BlogPostPage = () => {
       try {
         await navigator.share({
           title: post.title,
-          text: post.excerpt,
+          text: post.excerpt || `Read ${post.title} on amTop Blog`,
           url: window.location.href,
         });
       } catch (err) {
@@ -151,7 +151,7 @@ const BlogPostPage = () => {
     <>
       <SEO 
         title={`${post.title} - amTop Blog`}
-        description={post.excerpt}
+        description={post.excerpt || `Read ${post.title} on amTop Blog`}
         keywords={post.tags}
         type="article"
         url={`https://amtop.com/blog/${post.slug}`}
@@ -201,9 +201,11 @@ const BlogPostPage = () => {
               </h1>
 
               {/* Article Excerpt */}
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                {post.excerpt}
-              </p>
+              {post.excerpt && post.excerpt.trim() && (
+                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                  {post.excerpt}
+                </p>
+              )}
 
               {/* Article Meta Info */}
               <div className="flex items-center justify-between mb-8 pb-8 border-b border-gray-200">
