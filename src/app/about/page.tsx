@@ -441,7 +441,7 @@ const AboutPage = () => {
           >
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Values in Action</h3>
             <p className="text-base text-gray-700 mb-6 max-w-3xl mx-auto">
-              Every feature inside amTop was built with our values in mind — and that's how we've turned
+              Every feature inside amTop was built with our values in mind — and that&apos;s how we&apos;ve turned
               these principles into tools that help your business scale faster.
             </p>
             <a 
@@ -582,8 +582,8 @@ const AboutPage = () => {
             className="mt-16 text-center max-w-3xl mx-auto"
           >
             <p className="text-lg text-gray-700 italic">
-              "Our team combines decades of experience in marketing, AI, and product development to create
-              a platform that truly understands what marketers need to succeed in today's landscape."
+              &quot;Our team combines decades of experience in marketing, AI, and product development to create
+              a platform that truly understands what marketers need to succeed in today&apos;s landscape.&quot;
             </p>
             <div className="mt-4 font-semibold text-gray-900">— The amTop Team</div>
           </motion.div>
@@ -853,7 +853,7 @@ const AboutPage = () => {
               
               <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Join Us on This Journey</h3>
               <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed mb-8">
-                We're just getting started, and the road ahead is filled with innovation and growth.
+                We&apos;re just getting started, and the road ahead is filled with innovation and growth.
                 Our mission is to transform how businesses approach marketing — making it more
                 intelligent, efficient, and impactful every step of the way.
               </p>
