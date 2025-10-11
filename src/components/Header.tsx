@@ -80,8 +80,8 @@ const Header = () => {
         animate="visible"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-white/90 backdrop-blur-lg shadow-lg border-b border-gray-200' 
-            : 'bg-transparent'
+            ? 'bg-white/95 backdrop-blur-lg shadow-md border-b border-gray-200/70' 
+            : 'bg-white/5 backdrop-blur-sm'
         }`}
       >
         <div className="container-max">
@@ -91,14 +91,14 @@ const Header = () => {
               href="/"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
-              className="flex items-center h-12 sm:h-16 md:h-18 lg:h-20"
+              className="flex items-center h-12 sm:h-16 md:h-18 lg:h-20 relative group"
             >
               <Image
                 src="/images/logo.png"
                 alt="amTop Logo"
                 width={80}
                 height={80}
-                className="h-12 sm:h-16 md:h-18 lg:h-20 w-auto object-contain brightness-0 filter"
+                className="h-12 sm:h-16 md:h-18 lg:h-20 w-auto object-contain invert transition-transform duration-300 group-hover:scale-105"
               />
             </motion.a>
 
@@ -110,7 +110,7 @@ const Header = () => {
                   href={item.href}
                   whileHover={{ y: -1 }}
                   transition={{ duration: 0.2 }}
-                  className="text-gray-700 hover:text-black font-medium transition-colors duration-200 relative group text-sm xl:text-base"
+                  className="text-gray-800 hover:text-black font-medium transition-colors duration-200 relative group text-sm xl:text-base px-2 py-1 rounded-md hover:bg-gray-100/70"
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
@@ -127,7 +127,7 @@ const Header = () => {
                 whileHover={{ scale: 1.02, y: -1 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.2 }}
-                className="bg-black hover:bg-gray-800 text-white font-semibold py-2.5 sm:py-3 px-4 sm:px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center gap-2 text-sm xl:text-base"
+                className="bg-black hover:bg-gray-800 text-white font-semibold py-2.5 sm:py-3 px-5 sm:px-7 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex items-center gap-2 text-sm xl:text-base border border-transparent hover:border-gray-700 hover:-translate-y-0.5"
               >
                 Start Free
                 <ArrowRight size={16} />
@@ -139,7 +139,7 @@ const Header = () => {
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.1 }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 mobile-menu"
+              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-all duration-200 mobile-menu border border-transparent hover:border-gray-200 hover:shadow-sm"
               aria-label="Toggle mobile menu"
             >
               {isMenuOpen ? <X size={24} className="text-black" /> : <Menu size={24} className="text-black" />}
@@ -154,7 +154,7 @@ const Header = () => {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="lg:hidden border-t border-gray-200 bg-white/95 backdrop-blur-lg mobile-menu"
+                className="lg:hidden border-t border-gray-200 bg-white/98 backdrop-blur-lg mobile-menu shadow-lg"
               >
                 <div className="py-4 space-y-3">
                   {navItems.map((item) => (
@@ -164,7 +164,7 @@ const Header = () => {
                       onClick={() => setIsMenuOpen(false)}
                       whileHover={{ x: 4 }}
                       transition={{ duration: 0.2 }}
-                      className="block px-4 py-3 text-gray-700 hover:text-black hover:bg-gray-50 rounded-lg transition-all duration-200 font-medium text-base"
+                      className="block px-4 py-3 text-gray-800 hover:text-black hover:bg-gray-50 rounded-lg transition-all duration-200 font-medium text-base border-l-2 border-transparent hover:border-l-2 hover:border-gray-900 pl-5"
                     >
                       {item.name}
                     </motion.a>
@@ -178,7 +178,7 @@ const Header = () => {
                       whileTap={{ scale: 0.99 }}
                       transition={{ duration: 0.2 }}
                       onClick={() => setIsMenuOpen(false)}
-                      className="w-full bg-black hover:bg-gray-800 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 text-base"
+                      className="w-full bg-black hover:bg-gray-800 text-white font-semibold py-3.5 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 text-base border border-transparent hover:border-gray-700 hover:-translate-y-0.5"
                     >
                       Start Free
                       <ArrowRight size={18} />
