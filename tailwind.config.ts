@@ -29,6 +29,7 @@ const config: Config = {
         'fade-in-right': 'fadeInRight 0.6s ease-out',
         'slide-up': 'slideUp 0.3s ease-out',
         'slide-down': 'slideDown 0.3s ease-out',
+        'shimmer': 'shimmer 2s infinite',
       },
       keyframes: {
         blob: {
@@ -43,6 +44,14 @@ const config: Config = {
           },
           '100%': {
             transform: 'translate(0px, 0px) scale(1)',
+          },
+        },
+        shimmer: {
+          '0%': {
+            transform: 'translateX(-150%)',
+          },
+          '100%': {
+            transform: 'translateX(150%)',
           },
         },
         float: {

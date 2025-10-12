@@ -80,7 +80,7 @@ const Header = () => {
         animate="visible"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-white/95 backdrop-blur-lg shadow-md border-b border-gray-200/70' 
+            ? 'bg-white/80 backdrop-blur-lg shadow-md border-b border-gray-100' 
             : 'bg-white/5 backdrop-blur-sm'
         }`}
       >
@@ -102,15 +102,15 @@ const Header = () => {
               />
             </motion.a>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+            {/* Desktop Navigation - Centered */}
+            <nav className="hidden lg:flex items-center justify-center flex-1 space-x-8 xl:space-x-10">
               {navItems.map((item) => (
                 <motion.a
                   key={item.name}
                   href={item.href}
                   whileHover={{ y: -1 }}
                   transition={{ duration: 0.2 }}
-                  className="text-gray-800 hover:text-black font-medium transition-colors duration-200 relative group text-sm xl:text-base px-2 py-1 rounded-md hover:bg-gray-100/70"
+                  className="text-gray-800 hover:text-black font-medium transition-colors duration-200 relative group text-sm xl:text-base px-2 py-1 rounded-md"
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
@@ -127,7 +127,7 @@ const Header = () => {
                 whileHover={{ scale: 1.02, y: -1 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.2 }}
-                className="bg-black hover:bg-gray-800 text-white font-semibold py-2.5 sm:py-3 px-5 sm:px-7 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex items-center gap-2 text-sm xl:text-base border border-transparent hover:border-gray-700 hover:-translate-y-0.5"
+                className="bg-gradient-to-r from-[#0066ff] to-[#00aaff] hover:from-[#0055dd] hover:to-[#0099ff] text-white font-semibold py-2.5 sm:py-3 px-5 sm:px-7 rounded-xl shadow-md hover:shadow-blue-200/50 hover:shadow-lg transition-all duration-300 flex items-center gap-2 text-sm xl:text-base hover:scale-105"
               >
                 Start Free
                 <ArrowRight size={16} />
@@ -178,7 +178,7 @@ const Header = () => {
                       whileTap={{ scale: 0.99 }}
                       transition={{ duration: 0.2 }}
                       onClick={() => setIsMenuOpen(false)}
-                      className="w-full bg-black hover:bg-gray-800 text-white font-semibold py-3.5 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 text-base border border-transparent hover:border-gray-700 hover:-translate-y-0.5"
+                      className="w-full bg-gradient-to-r from-[#0066ff] to-[#00aaff] hover:from-[#0055dd] hover:to-[#0099ff] text-white font-semibold py-3.5 px-6 rounded-xl shadow-lg hover:shadow-blue-200/50 hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 text-base hover:scale-[1.02]"
                     >
                       Start Free
                       <ArrowRight size={18} />

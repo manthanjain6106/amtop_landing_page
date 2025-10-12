@@ -84,6 +84,16 @@ const nextConfig: NextConfig = {
         destination: '/blog/:slug*',
         permanent: true,
       },
+      {
+        source: '/privacy',
+        destination: '/privacy-policy',
+        permanent: true,
+      },
+      {
+        source: '/terms',
+        destination: '/terms-conditions',
+        permanent: true,
+      },
     ];
   },
 

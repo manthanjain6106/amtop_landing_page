@@ -21,49 +21,78 @@ const Hero = () => {
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-12 gap-x-4 xs:gap-x-5 sm:gap-x-6 md:gap-x-8 lg:gap-x-10 gap-y-6 xs:gap-y-8 sm:gap-y-10 md:gap-y-12 lg:gap-y-14 xl:gap-y-16 items-center">
              {/* Left content area - 6 columns on large screens */}
              <div className="w-full md:max-w-3xl md:mx-auto lg:max-w-4xl lg:mx-auto xl:col-span-6 xl:pr-6">
-              {/* Highlight badge */}
-              <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-full px-3 py-1 sm:px-4 sm:py-1.5 mb-6 sm:mb-8 md:mb-10">
-                <Sparkles className="w-4 h-4 text-blue-500" />
-                <span className="text-sm font-medium text-blue-700">AI-Powered Marketing Platform</span>
-              </div>
+               {/* Highlight badge with animation */}
+               <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-100 rounded-full px-3 py-1 sm:px-4 sm:py-1.5 mb-6 sm:mb-8 md:mb-10 shadow-sm relative overflow-hidden group">
+                 <div className="absolute inset-0 bg-gradient-to-r from-blue-100/20 to-cyan-100/20 w-[200%] animate-pulse-slow"></div>
+                 <div className="absolute inset-0 bg-gradient-to-r from-blue-100/0 via-white/80 to-blue-100/0 w-[200%] -translate-x-full group-hover:animate-shimmer"></div>
+                 <Sparkles className="w-4 h-4 text-blue-500 animate-pulse" />
+                 <span className="text-sm font-medium text-blue-700 relative z-10">AI-Powered Marketing Platform</span>
+               </div>
               
-              {/* Main headline with exactly 2 lines */}
-              <div className="mb-6 sm:mb-8 md:mb-10 lg:mb-12">
-                <p className="text-gray-900 text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold m-0 p-0 leading-tight">
-                  Transform Your
-                </p>
-                <p className="text-blue-600 text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold m-0 p-0 leading-tight mt-1 xs:mt-2 sm:mt-3 whitespace-nowrap">
-                  Marketing Strategy
-                </p>
-              </div>
+               {/* Main headline with animation */}
+               <div className="mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+                 <motion.p 
+                   initial={{ opacity: 0, y: 20 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.5 }}
+                   className="text-gray-900 text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold m-0 p-0 leading-tight tracking-tight"
+                 >
+                   Transform Your
+                 </motion.p>
+                 <motion.p 
+                   initial={{ opacity: 0, y: 20 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.5, delay: 0.2 }}
+                   className="text-blue-600 text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold m-0 p-0 leading-tight mt-1 xs:mt-2 sm:mt-3 whitespace-nowrap tracking-tight"
+                 >
+                   Marketing Strategy
+                 </motion.p>
+               </div>
               
-              {/* Description with highlighted text */}
-              <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-16 max-w-2xl">
-                Stop wasting hours on manual reporting. Get all your marketing insights in one intelligent dashboard and <span className="font-semibold text-gray-900">save 20+ hours every week</span>.
-              </p>
+               {/* Description with highlighted text and animation */}
+               <motion.p 
+                 initial={{ opacity: 0, y: 20 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ duration: 0.5, delay: 0.4 }}
+                 className="text-base xs:text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-16 max-w-2xl font-medium leading-relaxed"
+               >
+                 Stop wasting hours on manual reporting. Get all your marketing insights in one intelligent dashboard and <span className="font-bold text-gray-900">save 20+ hours every week</span>.
+               </motion.p>
               
               
               
-              {/* CTA buttons with distinctive styling */}
-              <div className="flex flex-col xs:flex-row gap-3 xs:gap-4 sm:gap-5 md:gap-6 lg:gap-8 mb-8 xs:mb-10 sm:mb-12 md:mb-16 lg:mb-20">
-                <a
-              href="https://app.amtop.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-                  className="bg-red-600 hover:bg-red-700 text-white font-medium py-2 xs:py-2.5 sm:py-3 px-4 xs:px-5 sm:px-6 rounded-lg flex items-center justify-center gap-2 group transition-all shadow-lg shadow-red-100 text-base xs:text-lg md:text-xl w-full xs:w-auto"
-                >
-                  <span>Start Free</span>
-                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                </a>
-                <a
-              href="https://cal.com/amtop-amarnath/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-                  className="border-2 border-gray-300 hover:border-gray-400 text-gray-800 font-medium py-2 xs:py-2.5 sm:py-3 px-4 xs:px-5 sm:px-6 rounded-lg flex items-center justify-center text-base xs:text-lg md:text-xl w-full xs:w-auto"
-                >
-                  <span>Schedule Demo</span>
-                </a>
-              </div>
+               {/* CTA buttons with distinctive styling - increased size */}
+               <motion.div 
+                 initial={{ opacity: 0, y: 20 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ duration: 0.5, delay: 0.6 }}
+                 className="flex flex-col xs:flex-row gap-3 xs:gap-4 sm:gap-5 md:gap-6 lg:gap-8 mb-8 xs:mb-10 sm:mb-12 md:mb-16 lg:mb-20"
+               >
+                 <div className="relative group w-full xs:w-auto">
+                   <a
+                     href="https://app.amtop.in/"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="bg-gradient-to-r from-[#ff7a00] to-[#ff4500] hover:from-[#ff8a20] hover:to-[#ff5520] text-white font-medium py-3 xs:py-3.5 sm:py-4 md:py-5 px-6 xs:px-7 sm:px-8 md:px-10 rounded-lg flex items-center justify-center gap-3 group transition-all duration-300 shadow-xl shadow-orange-100/50 hover:shadow-orange-200/50 text-base xs:text-lg sm:text-xl md:text-2xl w-full font-bold hover:scale-105"
+                   >
+                     <span>Start Free</span>
+                     <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
+                   </a>
+                   {/* Tooltip */}
+                   <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 translate-y-full bg-white px-3 py-1.5 rounded-md shadow-lg text-sm text-gray-700 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none border border-gray-100">
+                     No credit card required
+                     <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 rotate-45 w-2 h-2 bg-white border-t border-l border-gray-100"></div>
+                   </div>
+                 </div>
+                 <a
+                   href="https://cal.com/amtop-amarnath/30min"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="border-2 border-gray-300 hover:border-gray-400 hover:bg-gray-50 text-gray-800 font-medium py-3 xs:py-3.5 sm:py-4 md:py-5 px-6 xs:px-7 sm:px-8 md:px-10 rounded-lg flex items-center justify-center gap-2 text-base xs:text-lg sm:text-xl md:text-2xl w-full xs:w-auto font-bold transition-all duration-300 hover:scale-105"
+                 >
+                   <span>Schedule Demo</span>
+                 </a>
+               </motion.div>
               
               
             </div>
@@ -80,11 +109,23 @@ const Hero = () => {
                 {/* Dashboard frame with distinctive design */}
           <motion.div
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                  whileHover={{ scale: 1.03, rotate: 0, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
-                  className="relative bg-white rounded-2xl overflow-hidden shadow-2xl border border-gray-200 rotate-1 transform transition-all duration-500 mt-8 xs:mt-10 sm:mt-12 md:mt-8 lg:mt-12 xl:mt-16" 
-                  style={{ transform: "scale(1)", maxWidth: "100%", overflow: "hidden" }}>
+                  animate={{ 
+                    opacity: 1, 
+                    y: [0, -10, 0] 
+                  }}
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: 0.3,
+                    y: {
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.8
+                    }
+                  }}
+                   whileHover={{ scale: 1.03, rotate: 0, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+                   className="relative bg-white rounded-2xl overflow-hidden shadow-2xl border border-gray-200 rotate-1 transform transition-all duration-500 mt-8 xs:mt-10 sm:mt-12 md:mt-8 lg:mt-12 xl:mt-16" 
+                   style={{ maxWidth: "100%", overflow: "hidden" }}>
                   {/* Browser-like top bar with distinctive design */}
                   <div className="bg-gradient-to-r from-gray-100 to-white px-4 py-3 flex items-center border-b border-gray-200">
                     <div className="flex gap-1.5">
