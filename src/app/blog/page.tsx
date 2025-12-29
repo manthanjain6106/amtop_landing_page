@@ -288,19 +288,21 @@ const BlogPage = () => {
                     }
                   }}
                 >
-                  <div className="bg-gray-200 h-48 flex items-center justify-center">
+                  <div className="bg-white relative overflow-hidden w-full">
                     {article.image && article.image !== '/images/blog-placeholder.jpg' ? (
                       <Image 
                         src={article.image} 
                         alt={article.title}
                         width={400}
                         height={192}
-                        className="w-full h-full object-cover"
+                        className="w-full h-auto object-contain"
                       />
                     ) : (
-                      <div className="text-center text-gray-500">
-                        <BookOpen size={32} className="mx-auto mb-2" />
-                        <p className="text-sm">Article Image</p>
+                      <div className="w-full h-full bg-gray-200 flex items-center justify-center text-center text-gray-500">
+                        <div>
+                          <BookOpen size={32} className="mx-auto mb-2" />
+                          <p className="text-sm">Article Image</p>
+                        </div>
                       </div>
                     )}
                   </div>

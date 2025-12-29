@@ -237,7 +237,7 @@ const BlogPostPage = () => {
                       src={post.image} 
                       alt={post.title}
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                 </div>
