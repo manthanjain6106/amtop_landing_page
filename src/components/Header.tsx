@@ -80,8 +80,8 @@ const Header = () => {
         animate="visible"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-white/80 backdrop-blur-lg shadow-md border-b border-gray-100' 
-            : 'bg-white/5 backdrop-blur-sm'
+            ? 'bg-white/90 backdrop-blur-md shadow-md border-b border-gray-100' 
+            : 'bg-white/10 backdrop-blur-none'
         }`}
       >
         <div className="container-max">
@@ -91,14 +91,16 @@ const Header = () => {
               href="/"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
-              className="flex items-center h-12 sm:h-16 md:h-18 lg:h-20 relative group"
+              className="flex items-center h-7 sm:h-9 md:h-11 lg:h-12 relative group mt-3 sm:mt-3.5"
             >
               <Image
-                src="/images/logo.png"
+                src="/images/logo-1.png"
                 alt="amTop Logo"
-                width={80}
-                height={80}
-                className="h-12 sm:h-16 md:h-18 lg:h-20 w-auto object-contain invert transition-transform duration-300 group-hover:scale-105"
+                width={200}
+                height={200}
+                quality={100}
+                priority
+                className="h-7 sm:h-9 md:h-11 lg:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </motion.a>
 
@@ -154,7 +156,7 @@ const Header = () => {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="lg:hidden border-t border-gray-200 bg-white/98 backdrop-blur-lg mobile-menu shadow-lg"
+                className="lg:hidden border-t border-gray-200 bg-white/99 backdrop-blur-md mobile-menu shadow-lg"
               >
                 <div className="py-4 space-y-3">
                   {navItems.map((item) => (
